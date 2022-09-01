@@ -11,27 +11,32 @@ import HomePage from './containers/Homepage';
 function App() {
   return (
     <div className="App">
-
-    <header>
+    
+   
   
     <Router>
+    <header>
+    <div>
     <NavBar/>
-        <Routes>
-          <Route path="/" />
+    
+    </div>
+    </header>
+    <div>
+    <main>
+
+    <Routes>
+          <Route path="/" element={<HomePage/>} />
           <Route path='/personalportfolio' element={<Portfolio/>}/>
           <Route path='/projections' element={<Projections/>}/>
           <Route path='/addanewshare' element={<AddShares/>}/>
           <Route path="/*" element={<ErrorPage/>}/>
         </Routes>
-      </Router>
-    </header>
-
+    </main>
+    </div>
+    </Router>
   <footer>
     FOOTER
-  </footer>
-
-        
-
+  </footer> 
     </div>
   );
 }

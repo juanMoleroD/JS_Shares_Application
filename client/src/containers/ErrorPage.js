@@ -11,7 +11,7 @@ const Error = () => {
         <div>
          
             <p>
-                ERROR : PAGE NOT FOUND
+                ERROR 404 : PAGE NOT FOUND
             </p>
         </div>
     )
