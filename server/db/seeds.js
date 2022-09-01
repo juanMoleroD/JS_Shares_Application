@@ -18,5 +18,4 @@ db.portfolio.insertMany([
         sharePurchasePrice: 150,
         heldAmount: 3
     }
-        
 ]);
