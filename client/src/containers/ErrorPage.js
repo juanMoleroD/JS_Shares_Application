@@ -1,12 +1,19 @@
 import React from "react";
 
-const ErrorPage = () => {
+import NavBar from "../components/NavBar";
+
+
+const Error = () => {
+
     return(
-        <>
-            <h1>Error!</h1>
-            <p>There has been an error, go back home</p>
-        </>
+
+
+        <div>
+         
+            <p>
+                ERROR : PAGE NOT FOUND
+            </p>
+        </div>
     )
 }
-
-export default ErrorPage;
+export default Error;
