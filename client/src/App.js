@@ -11,6 +11,7 @@ import HomePage from './containers/Homepage';
 function App() {
   return (
     <div className="App">
+
     <header>
   
     <Router>
@@ -28,6 +29,9 @@ function App() {
   <footer>
     FOOTER
   </footer>
+
+        
+
     </div>
   );
 }

@@ -1,4 +1,5 @@
 import React from "react";
+
 import { Link } from "react-router-dom";
 
 
@@ -13,7 +14,7 @@ const NavBar = () => {
         <li><Link to="/projections">Projections</Link></li>
         <li><Link to="/addanewshare">Add A New Share</Link></li>
         </ul>
-        
+
     )
 }
 
