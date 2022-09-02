@@ -1,5 +1,6 @@
 import React, {useState} from "react";
-import NavBar from "../components/NavBar";
+import ListOfShares from "../components/ListOfShares";
+
 
 const Portfolio = () => {
 
@@ -26,12 +27,22 @@ const Portfolio = () => {
     }
 
 
-    const shareNodes = shares.map( (share, index) => {
-        return <li key={index}> {share.shareName} - {share.sharePurchasePrice} - {share.heldAmount}</li>;
-    });
+    const addShares = (share) => {
+        const temp = shares.map(s=>s);
+        temp.push(share);
+        setShares(temp);
+    }
+
+    const removeShares = (id) =>{
+        const temp = shares.map(s=> s);
+        const indexToDel = temp.map(s => s._id).index(id);
+        console.log(indexToDel)
+
+        temp.splice(indexToDel, 1);
+        setShares(temp)
+    }
 
 
-    // -- useState --//
     useState(() => {
         getShares();
     }, [])
@@ -41,9 +52,8 @@ const Portfolio = () => {
         <main>
         
                 <h2>Portfolio of shares:</h2>
-                <ul>
-                    {shareNodes}
-                </ul>
+           <ListOfShares shares={shares}/>
+
             </main>
         </>
     )
