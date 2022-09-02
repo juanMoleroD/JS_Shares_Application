@@ -10,7 +10,38 @@ import HomePage from './containers/Homepage';
 
 function App() {
   return (
-    <div className="Application">
+    <div className="container">
+    <div className="loader">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
     
    
   
@@ -35,7 +66,17 @@ function App() {
     </div>
     </Router>
   <footer>
-    FOOTER
+  <div className="footer-social-icons">
+    <h4 className="_14">Follow us for the latest stock news and information:</h4>
+    <ul className="social-icons">
+        <li><a href="" className="social-icon"> <i className="fa fa-facebook"></i></a></li>
+        <li><a href="" className="social-icon"> <i className="fa fa-twitter"></i></a></li>
+        <li><a href="" className="social-icon"> <i className="fa fa-rss"></i></a></li>
+        <li><a href="" className="social-icon"> <i className="fa fa-youtube"></i></a></li>
+        <li><a href="" className="social-icon"> <i className="fa fa-linkedin"></i></a></li>
+        <li><a href="" className="social-icon"> <i className="fa fa-google-plus"></i></a></li>
+    </ul>
+</div>
   </footer> 
     </div>
   );
