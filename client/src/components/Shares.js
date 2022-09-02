@@ -2,7 +2,7 @@ import React from "react";
 
 const Shares = ({share}) => {
 
-    return <li> {share.shareName} - {share.sharePurchasePrice} - {share.heldAmount}</li>;
+    return <li> {share["Meta Data"]["1. Information"]}</li>;
     
     }
 

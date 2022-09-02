@@ -5,29 +5,22 @@ import {getShares} from "../SharesService"
 
 const Portfolio = () => {
 
-    const [shares, setShares] = useState("");
-    const [share, setShare] = useState("");
+    const [shares, setShares] = useState(""); //THE QUOTES ARE IMPORTANT
 
     
     useEffect(() => {
         getShares()
             .then(response => {
                 setShares(response)
-                setShare(response["Meta Data"]["2. Symbol"])
             });
     }, [])
     // useEffect(());
     
     return(
         <>
-        <main>
+            <main>
                 <h2>Portfolio of shares:</h2>
-           {/* <ListOfShares shares={shares}/> */}
-                {
-                    shares.length > 0 ? <h3>{shares["Meta Data"]["1. Information"]}</h3> : <h3>loading</h3>
-                }
-                
-                {/* <h3>{share}</h3> */}
+                <ListOfShares shares={shares}/>
 
             </main>
         </>
