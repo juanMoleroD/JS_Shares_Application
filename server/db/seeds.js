@@ -12,10 +12,5 @@ db.portfolio.insertMany([
         shareName: "AAPL",
         sharePurchasePrice: 120,
         heldAmount: 1
-    },
-    {
-        shareName: "TSLA",
-        sharePurchasePrice: 150,
-        heldAmount: 3
     }
 ]);

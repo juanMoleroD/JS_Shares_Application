@@ -9,6 +9,7 @@ export const getSharePrice = (shareName) => {
     const query = `https://www.alphavantage.co/query?function=TIME_SERIES_WEEKLY&symbol=${shareName}${API_authorization}`
     return fetch(query)
             .then(response => response.json())
+            .then(data => data["Weekly Time Series"]["2022-09-02"]["4. close"])
 }
 
 export const getPortfolio = () => {
