@@ -1,11 +1,13 @@
 import React from "react";
 
-const Shares = ({portfolio, share}) => {
+const Shares = ({share}) => {
 
-    return <li> {portfolio.shareName} - {portfolio.heldAmount} 
-    - bough at: {portfolio.sharePurchasePrice} - current price: {share["Weekly Time Series"]["2022-09-02"]["4. close"]}</li>;
-    
-    }
-
+    return (
+        <li> 
+            {share.shareName} - {share.heldAmount} - bough at: {share.sharePurchasePrice}
+                - current price: {share.currentPrice} 
+        </li>
+    )
+}
 
 export default Shares;
