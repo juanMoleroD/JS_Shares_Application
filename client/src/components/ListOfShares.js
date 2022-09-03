@@ -2,24 +2,16 @@ import React from "react";
 import Shares from "./Shares";
 
 
-const ListOfShares = ({shares}) => {
+const ListOfShares = ({ portfolio }) => {
 
-    const shareNodes = shares.map( (share, index) => {
-        return <Shares share={share} key={index}/>
+    const shareNodes = portfolio.map( (share, index) => {
+        return <Shares share={share} key={index}/> } )
 
-    });
-
-    return(
-<ul>
-    {shareNodes}
-</ul>
-
+    return (
+        <ul>
+            {shareNodes}
+        </ul>
     )
-    
 }
-    
-
-
-
 
 export default ListOfShares;

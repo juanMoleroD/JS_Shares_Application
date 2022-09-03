@@ -1,58 +1,38 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import ListOfShares from "../components/ListOfShares";
+import {getPortfolio, getSharePrice} from "../SharesService"
 
 
 const Portfolio = () => {
 
-    const [shares, setShares] = useState([]);
+    const [portfolio, setPortfolio] = useState();
 
-    const getShares = () => {
-        setShares( [
-            {
-                shareName: "GOOG",
-                sharePurchasePrice: 110,
-                heldAmount: 2
-            },
-            {
-                shareName: "AAPL",
-                sharePurchasePrice: 120,
-                heldAmount: 1
-            },
-            {
-                shareName: "TSLA",
-                sharePurchasePrice: 150,
-                heldAmount: 3
-            }
-        ])
-    }
+    useEffect(() => {
+        getPortfolio()
+        .then(data => {
+            const portfolioWithSharePricesArray = data.map( (share) => {
+                return getSharePrice(share.shareName)
+            } )
 
+            Promise.all(portfolioWithSharePricesArray)
+            .then(resolvedPromises => {
 
-    const addShares = (share) => {
-        const temp = shares.map(s=>s);
-        temp.push(share);
-        setShares(temp);
-    }
-
-    const removeShares = (id) =>{
-        const temp = shares.map(s=> s);
-        const indexToDel = temp.map(s => s._id).index(id);
-        console.log(indexToDel)
-
-        temp.splice(indexToDel, 1);
-        setShares(temp)
-    }
-
-
-    useState(() => {
-        getShares();
+                resolvedPromises.forEach((sharePrice, index) => {
+                    data[index]["currentPrice"] = sharePrice;
+                })
+                setPortfolio(data);
+            })
+        })
     }, [])
     
     return(
         <>
-        <main>
-        
+            <main>
                 <h2>Portfolio of shares:</h2>
-           <ListOfShares shares={shares}/>
+                {portfolio? 
+                    <ListOfShares portfolio={portfolio} />
+                    : <p>Loading</p>
+                }
 
             </main>
         </>
