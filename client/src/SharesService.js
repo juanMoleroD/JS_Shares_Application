@@ -5,7 +5,13 @@ const weeklyData = "TIME_SERIES_WEEKLY&symbol=";
 const API_authorization = "&apikey=" + API_key;
 
 
-export const getShares = () => {
-    return fetch(baseURL + weeklyData + "TSLA" + API_authorization)
+export const getSharePrice = (shareName) => {
+    const query = `https://www.alphavantage.co/query?function=TIME_SERIES_WEEKLY&symbol=${shareName}${API_authorization}`
+    return fetch(query)
             .then(response => response.json())
+}
+
+export const getPortfolio = () => {
+    return fetch("http://localhost:9000/api/portfolio")
+                .then(response => response.json())
 }

@@ -1,26 +1,31 @@
 import React, {useState, useEffect} from "react";
 import ListOfShares from "../components/ListOfShares";
-import {getShares} from "../SharesService"
+import {getPortfolio, getSharePrice, getShares} from "../SharesService"
 
 
 const Portfolio = () => {
 
+    const [portfolio, setPortfolio] = useState();
+
     const [shares, setShares] = useState(""); //THE QUOTES ARE IMPORTANT
 
-    
+
     useEffect(() => {
-        getShares()
+        getPortfolio()
+        .then(data => {
+            setPortfolio(data)
+        })
+        getSharePrice("GOOG")
             .then(response => {
                 setShares(response)
             });
     }, [])
-    // useEffect(());
     
     return(
         <>
             <main>
                 <h2>Portfolio of shares:</h2>
-                <ListOfShares shares={shares}/>
+                <ListOfShares portfolio={portfolio} shares={shares}/>
 
             </main>
         </>
