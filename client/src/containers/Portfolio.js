@@ -1,58 +1,31 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import ListOfShares from "../components/ListOfShares";
+import {getPortfolio, getSharePrice, getShares} from "../SharesService"
 
 
 const Portfolio = () => {
 
-    const [shares, setShares] = useState([]);
+    const [portfolio, setPortfolio] = useState();
 
-    const getShares = () => {
-        setShares( [
-            {
-                shareName: "GOOG",
-                sharePurchasePrice: 110,
-                heldAmount: 2
-            },
-            {
-                shareName: "AAPL",
-                sharePurchasePrice: 120,
-                heldAmount: 1
-            },
-            {
-                shareName: "TSLA",
-                sharePurchasePrice: 150,
-                heldAmount: 3
-            }
-        ])
-    }
+    const [shares, setShares] = useState(""); //THE QUOTES ARE IMPORTANT
 
 
-    const addShares = (share) => {
-        const temp = shares.map(s=>s);
-        temp.push(share);
-        setShares(temp);
-    }
-
-    const removeShares = (id) =>{
-        const temp = shares.map(s=> s);
-        const indexToDel = temp.map(s => s._id).index(id);
-        console.log(indexToDel)
-
-        temp.splice(indexToDel, 1);
-        setShares(temp)
-    }
-
-
-    useState(() => {
-        getShares();
+    useEffect(() => {
+        getPortfolio()
+        .then(data => {
+            setPortfolio(data)
+        })
+        getSharePrice("GOOG")
+            .then(response => {
+                setShares(response)
+            });
     }, [])
     
     return(
         <>
-        <main>
-        
+            <main>
                 <h2>Portfolio of shares:</h2>
-           <ListOfShares shares={shares}/>
+                <ListOfShares portfolio={portfolio} shares={shares}/>
 
             </main>
         </>
