@@ -7,7 +7,7 @@ const Portfolio = () => {
 
     const [portfolio, setPortfolio] = useState();
 
-    const [shares, setShares] = useState(""); //THE QUOTES ARE IMPORTANT
+    const [sharePrices, setSharePrices] = useState(""); //THE QUOTES ARE IMPORTANT
 
 
     useEffect(() => {
@@ -15,17 +15,24 @@ const Portfolio = () => {
         .then(data => {
             setPortfolio(data)
         })
-        getSharePrice("GOOG")
-            .then(response => {
-                setShares(response)
-            });
     }, [])
+
+    useEffect(() => {
+        if (portfolio) {
+            getSharePrice(portfolio[0].shareName)
+            .then(response => {
+                if (response["Weekly Time Series"]) {
+                    setSharePrices(response)
+                } else console.log(response)
+            });
+        }
+    }, [portfolio])
     
     return(
         <>
             <main>
                 <h2>Portfolio of shares:</h2>
-                <ListOfShares portfolio={portfolio} shares={shares}/>
+                <ListOfShares portfolio={portfolio} shares={sharePrices}/>
 
             </main>
         </>
