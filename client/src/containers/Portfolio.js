@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import ListOfShares from "../components/ListOfShares";
 import {getPortfolio, getSharePrice} from "../SharesService"
+import Shares from "../components/Shares";
 
 
 const Portfolio = () => {
@@ -18,12 +19,14 @@ const Portfolio = () => {
             .then(resolvedPromises => {
 
                 resolvedPromises.forEach((sharePrice, index) => {
-                    data[index]["currentPrice"] = sharePrice;
+                    data[index]["currentPrice"] = parseInt(sharePrice);
                 })
                 setPortfolio(data);
             })
         })
     }, [])
+
+    
     
     return(
         <>
@@ -33,6 +36,7 @@ const Portfolio = () => {
                     <ListOfShares portfolio={portfolio} />
                     : <p>Loading</p>
                 }
+               
 
             </main>
         </>
