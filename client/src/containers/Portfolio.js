@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import ListOfShares from "../components/ListOfShares";
-import {getPortfolio, getSharePrice, getShares} from "../SharesService"
+import {getPortfolio, getSharePrice} from "../SharesService"
 
 
 const Portfolio = () => {
