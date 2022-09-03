@@ -9,18 +9,18 @@ const Portfolio = () => {
 
     useEffect(() => {
         getPortfolio()
-        .then(data => {
-            const portfolioWithSharePricesArray = data.map( (share) => {
+        .then(arrayOfSharesInPortfolio => {
+            const arrayOfPromisesForSharePrices = arrayOfSharesInPortfolio.map( (share) => {
                 return getSharePrice(share.shareName)
             } )
 
-            Promise.all(portfolioWithSharePricesArray)
-            .then(resolvedPromises => {
+            Promise.all(arrayOfPromisesForSharePrices)
+            .then(arrayOfResolvedPromises => {
 
-                resolvedPromises.forEach((sharePrice, index) => {
-                    data[index]["currentPrice"] = sharePrice;
+                arrayOfResolvedPromises.forEach((sharePrice, index) => {
+                    arrayOfSharesInPortfolio[index]["currentPrice"] = parseInt(sharePrice);
                 })
-                setPortfolio(data);
+                setPortfolio(arrayOfSharesInPortfolio);
             })
         })
     }, [])

@@ -10,31 +10,24 @@ const Shares = ({ share }) => {
     const options = {
         title: {
             text: share.shareName
-                },
+        },
         series: [{
-            data:  [1, 2, share.sharePurchasePrice, 4, 3, 6, 7, share.currentPrice, 8, 6, 9]
+            data: [share.sharePurchasePrice, share.currentPrice]
         }]
     }
     return (
 
+        <div className="shares-display">
+                <HighchartsReact
+                    highcharts={Highcharts}
+                    constructorType={'stockChart'}
+                    options={options}
+                />
 
-
-
-
-        <div>
-            <HighchartsReact
-                highcharts={Highcharts}
-                constructorType={'stockChart'}
-                options={options}
-            />
-
-
-
-            <li>
-                {share.shareName} - {share.heldAmount} - bough at: {share.sharePurchasePrice}
-                - current price: {share.currentPrice}
-            </li>
-
+                <li>
+                    {share.shareName} - {share.heldAmount} - bough at: {share.sharePurchasePrice}
+                    - current price: {share.currentPrice}
+                </li>
         </div>
     )
 }
