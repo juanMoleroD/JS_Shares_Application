@@ -7,6 +7,8 @@ import Portfolio from './containers/Portfolio';
 import Projections from './containers/Projections';
 import ErrorPage from './containers/ErrorPage';
 import HomePage from './containers/Homepage';
+import HighchartsReact from 'highcharts-react-official';
+import highcharts from 'highcharts';
 
 function App() {
   return (
