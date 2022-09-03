@@ -1,7 +1,7 @@
 import React from "react";
 
 import { render } from 'react-dom'
-import Highcharts from 'highcharts/highstock'
+import Highcharts, { color } from 'highcharts/highstock'
 import HighchartsReact from 'highcharts-react-official'
 
 
@@ -17,6 +17,9 @@ const Shares = ({ share }) => {
     }
 
     const totalValue = share.currentPrice * share.heldAmount
+    const percentage = (((share.currentPrice - share.sharePurchasePrice)/share.sharePurchasePrice)*100).toFixed(2)
+    const investedAmount = share.sharePurchasePrice * share.heldAmount
+    const profitLoss = totalValue - investedAmount
 
 
     return (
@@ -48,7 +51,13 @@ const Shares = ({ share }) => {
                                 <b>Current Price: </b>
                             </th>
                             <th>
+                                <b>24h/Change: </b>
+                            </th>
+                            <th>
                                 <b>Estimated Value: </b>
+                            </th>
+                            <th>
+                                <b>P/L: </b>
                             </th>
 
                         </tr>
@@ -57,7 +66,9 @@ const Shares = ({ share }) => {
                             <td>{share.heldAmount}</td>
                             <td>{share.sharePurchasePrice}$ </td>
                             <td>{share.currentPrice}$</td>
+                            <td>{percentage}% </td>
                             <td>{totalValue}$</td>
+                            <td>{profitLoss}$</td>
                         </tr>
                     </tbody>
 
