@@ -15,7 +15,7 @@ const createRouter = function (collections) {
                 res.status(500);
                 res.json({ status: 500, error: err });
             });
-    })
+    });
 
     Router.post("/", (request, response) => {
         const newDataToAdd = request.body;
@@ -27,7 +27,7 @@ const createRouter = function (collections) {
                 response.status(500);
                 response.json({status: 500, error: error});
             });
-    })
+    });
 
     Router.delete("/:id", (request,response) => {
         const id = request.params.id;
@@ -39,7 +39,23 @@ const createRouter = function (collections) {
                 response.status(500);
                 response.json({status: 500, error: error});
             });
-    })
+    });
+
+    Router.put("/:id", (request, response) => {
+        const id = request.params.id;
+        const newDataToUpdate = request.body;
+        collections
+            .updateOne(
+                { _id: ObjectId(id)} ,
+                { "$set": newDataToUpdate}
+            )
+            .then(result => result.json())
+            .catch(error => {
+                console.error;
+                response.status(500);
+                response.json({status: 500, error: error})
+            });
+    });
 
     return Router;
 }
