@@ -1,5 +1,6 @@
 import {API_key} from "./API_key";
 
+const serverURL = "http://localhost:9000/api/portfolio/"
 const baseURL = "https://www.alphavantage.co/query?function=";
 const weeklyData = "TIME_SERIES_WEEKLY&symbol=";
 const API_authorization = "&apikey=" + API_key;
@@ -13,6 +14,13 @@ export const getSharePrice = (shareName) => {
 }
 
 export const getPortfolio = () => {
-    return fetch("http://localhost:9000/api/portfolio")
+    return fetch(serverURL)
                 .then(response => response.json())
+}
+
+
+export const deleteShare = (id) => {
+    return fetch(serverURL + id ,{
+        method: 'DELETE'
+    })
 }
