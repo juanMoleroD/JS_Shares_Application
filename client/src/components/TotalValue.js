@@ -6,24 +6,17 @@ const TotalValue = ({portfolio}) => {
 
 
     
-    // const totalAmount = portfolio.reduce((shareValue, nextShareValue) => {
-    //     return shareValue + nextShareValue.currentPrice
-    // }, 0)
-    // const totalValue = share.currentPrice * share.heldAmount
+    const totalAmount = portfolio.reduce((runningTotal, share) => {
+        return runningTotal + (share.currentPrice * share.heldAmount)
 
-    // let total = 0
-
-    
-
-        
-
+    }, 0)
     
 
 
 
     return(
         <>
-<h2>Total Portfolio Value: {}</h2>
+<h2>Total Portfolio Value: {totalAmount}</h2>
         </>
     )
 

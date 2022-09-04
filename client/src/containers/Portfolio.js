@@ -32,7 +32,6 @@ const Portfolio = () => {
         })
     }
 
-
     const removeShare = (id) => {
         const temp = portfolio.map(s =>s);
         const indexToDel = temp.map(s => s._id).indexOf(id);

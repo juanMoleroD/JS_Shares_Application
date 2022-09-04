@@ -6,6 +6,7 @@ import Highcharts, { color } from 'highcharts/highstock'
 import HighchartsReact from 'highcharts-react-official'
 
 
+
 const Shares = ({ share, removeShare, updateSharePrice }) => {
 
     const options = {
