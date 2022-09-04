@@ -1,6 +1,5 @@
 import React from "react";
 import { deleteShare } from "../SharesService";
-
 import { render } from 'react-dom'
 import Highcharts, { color } from 'highcharts/highstock'
 import HighchartsReact from 'highcharts-react-official'

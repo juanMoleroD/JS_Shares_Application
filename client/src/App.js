@@ -4,7 +4,6 @@ import NavBar from './components/NavBar';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import AddShares from './containers/AddShares';
 import Portfolio from './containers/Portfolio';
-
 import ErrorPage from './containers/ErrorPage';
 import HomePage from './containers/Homepage';
 import HighchartsReact from 'highcharts-react-official';

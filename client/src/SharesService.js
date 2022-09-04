@@ -32,3 +32,14 @@ export const updateShare = (share, id) =>{
         headers: { 'Content-Type': 'application/json'}
     })
 }
+
+export const postShare =(share) => {
+    return fetch(serverURL), {
+        method: "POST",
+        body: JSON.stringify(share),
+        headers: {'Content-Type' : 'application/json'}
+    }
+
+.then(res => res.json())
+};
+
