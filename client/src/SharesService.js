@@ -24,3 +24,11 @@ export const deleteShare = (id) => {
         method: 'DELETE'
     })
 }
+
+export const updateShare = (share, id) =>{
+    return fetch(serverURL + id, {
+        method: "PUT",
+        body: JSON.stringify(share),
+        headers: { 'Content-Type': 'application/json'}
+    })
+}

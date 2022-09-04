@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import ListOfShares from "../components/ListOfShares";
-import {getPortfolio, getSharePrice} from "../SharesService"
+import {getPortfolio, getSharePrice, updateShare} from "../SharesService"
 import Shares from "../components/Shares";
 
 
@@ -9,6 +9,10 @@ const Portfolio = () => {
     const [portfolio, setPortfolio] = useState();
 
     useEffect(() => {
+        getPortfolioShares()
+    }, [])
+
+    const getPortfolioShares = () =>{
         getPortfolio()
         .then(data => {
             const portfolioWithSharePricesArray = data.map( (share) => {
@@ -26,7 +30,8 @@ const Portfolio = () => {
          
                 
         })
-    }, [])
+    }
+
 
     const removeShare = (id) => {
         const temp = portfolio.map(s =>s);
@@ -36,8 +41,12 @@ const Portfolio = () => {
         setPortfolio(temp);
       }
 
-
-
+    const updateSharePrice = (share, share_id) =>{
+        updateShare(share, share_id)
+        .then(()=>{
+            getPortfolioShares()
+        })
+    }
 
     
     
@@ -46,7 +55,7 @@ const Portfolio = () => {
             <main>
                 <h2>Portfolio of shares:</h2>
                 {portfolio? 
-                    <ListOfShares portfolio={portfolio} removeShare={removeShare} />
+                    <ListOfShares portfolio={portfolio} removeShare={removeShare} updateSharePrice={updateSharePrice} />
                     : <p>Loading</p>
                 }
                

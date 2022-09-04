@@ -6,7 +6,7 @@ import Highcharts, { color } from 'highcharts/highstock'
 import HighchartsReact from 'highcharts-react-official'
 
 
-const Shares = ({ share, removeShare }) => {
+const Shares = ({ share, removeShare, updateSharePrice }) => {
 
     const options = {
         title: {
@@ -21,6 +21,23 @@ const Shares = ({ share, removeShare }) => {
         deleteShare(share._id).then(()=>{
             removeShare(share._id);
         })
+    }
+    const handleIncrease = () =>{
+        const increasePrice =  {
+            shareName: share.shareName,
+            sharePurchasePrice: share.sharePurchasePrice + 1,
+            heldAmount: share.heldAmount
+        }
+        updateSharePrice(increasePrice, share._id )
+    }
+    const handleDecrease = () =>{
+        const decreasePrice ={
+            shareName: share.shareName,
+            sharePurchasePrice: share.sharePurchasePrice - 1,
+            heldAmount: share.heldAmount
+        }
+        updateSharePrice(decreasePrice, share._id)
+
     }
 
     const totalValue = share.currentPrice * share.heldAmount
@@ -53,7 +70,7 @@ const Shares = ({ share, removeShare }) => {
                                 <b>Amount: </b>
                             </th>
                             <th>
-                                <b>Purchase Price: </b>
+                                <b>Purchase Price: </b><button onClick={handleIncrease}>+</button><button onClick={handleDecrease}>-</button>
                             </th>
                             <th>
                                 <b>Current Price: </b>
@@ -77,7 +94,7 @@ const Shares = ({ share, removeShare }) => {
                             <td>{percentage}% </td>
                             <td>{totalValue}$</td>
                             <td>{profitLoss}$</td>
-                            <td><button onClick={handleDelete}>🗑</button></td>
+                            <td className="buttonBox"><button onClick={handleDelete} className="btn">🗑</button></td>
                         </tr>
                     </tbody>
 
