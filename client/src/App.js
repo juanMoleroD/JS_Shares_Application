@@ -6,6 +6,7 @@ import AddShares from './containers/AddShares';
 import Portfolio from './containers/Portfolio';
 import ErrorPage from './containers/ErrorPage';
 import HomePage from './containers/Homepage';
+import Account from './containers/Account'
 import HighchartsReact from 'highcharts-react-official';
 import highcharts from 'highcharts';
 
@@ -25,8 +26,8 @@ function App() {
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path='/personalportfolio' element={<Portfolio />} />
-        
               <Route path='/addanewshare' element={<AddShares />} />
+              <Route path='/account' element={<Account/>}/>
               <Route path="/*" element={<ErrorPage />} />
             </Routes>
           </main>

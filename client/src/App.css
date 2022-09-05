@@ -1,7 +1,9 @@
 
-a{
+/* a{
   text-decoration: none;
-}
+} */
+
+
 header{
 
     background-color: #ffffffcf;
@@ -23,7 +25,6 @@ header{
     max-width: 500px;
     max-height: 500px;
     margin:auto;
-
     background-color:  #ffffffcf;
     border-radius: 20px;
     border: white;
@@ -139,4 +140,13 @@ h3{
     border: white;
     color: grey;
     text-align: center;
+}
+
+.upgradebutton{
+
+    color:white
+
+}
+.upgradebutton a:any-link{
+    color:black 
 }
