@@ -1,7 +1,11 @@
+
 header{
 
   border: 2px black solid;
 };
+
+
+
 
 
 main{
@@ -256,4 +260,25 @@ ul.social-icons {
     
 	-webkit-transform: translate(150px, 800px) rotateZ(360deg);
   }
+}
+
+.table{
+    border: solid 2px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+
+.tbody{
+    text-align: center;
+}
+
+
+
+.btn{
+    margin: auto;
+    display: block;
+    font-size: 25px;
+    margin-bottom: 15px;
+    
 }
