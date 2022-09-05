@@ -68,7 +68,7 @@ const Portfolio = () => {
                 <h2>Portfolio of shares:</h2>
                 {portfolio? 
                     <ListOfShares portfolio={portfolio} removeShare={removeShare} updateSharePrice={updateSharePrice} updateAmountHeld={updateAmountHeld} />
-                    : <p>Loading</p>
+                    : <p>Fetching Portfolio.. Please Wait..Currently Loading...</p>
                 }
                
 
