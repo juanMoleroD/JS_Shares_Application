@@ -4,6 +4,8 @@ const serverURL = "http://localhost:9000/api/portfolio"
 const baseURL = "https://www.alphavantage.co/query?function=";
 const weeklyData = "TIME_SERIES_WEEKLY&symbol=";
 const API_authorization = "&apikey=" + API_key;
+const API_Search = `https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords=`
+
 
 
 export const getSharePrice = (shareName) => {
@@ -41,3 +43,10 @@ export const postShare =(share) => {
     })
 };
 
+
+
+
+export const searchSymbol = (searchParam) => {
+    return fetch(API_Search + `${searchParam}${API_authorization}`)
+    .then(res => res.json())
+}

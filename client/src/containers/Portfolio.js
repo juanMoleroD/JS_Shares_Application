@@ -1,12 +1,14 @@
 import React, {useState, useEffect} from "react";
 import ListOfShares from "../components/ListOfShares";
-import {getPortfolio, getSharePrice, updateShare, postShare} from "../SharesService"
+import {getPortfolio, getSharePrice, updateShare, postShare, searchSymbol} from "../SharesService"
 import Shares from "../components/Shares";
+import AddShares from "./AddShares";
 
 
 const Portfolio = () => {
 
     const [portfolio, setPortfolio] = useState();
+    const [filteredPortfolio, setFilteredPortfolio] = useState();
 
     useEffect(() => {
         getPortfolioShares()
@@ -26,18 +28,13 @@ const Portfolio = () => {
                     data[index]["currentPrice"] = parseInt(sharePrice);
                 })
                 setPortfolio(data);
+                setFilteredPortfolio(data);
             })
          
                 
         })
     }
-    const saveNewShare = (share) => {
-        postShare(share)
-        .then(result => {
-         const copyPortfolio = [...portfolio, result];
-         setPortfolio(copyPortfolio)
-        })
-     }
+
 
     const removeShare = (id) => {
         const temp = portfolio.map(s =>s);
@@ -60,6 +57,7 @@ const Portfolio = () => {
             getPortfolioShares()
         })
     }
+
     
     return(
         <>
@@ -69,6 +67,7 @@ const Portfolio = () => {
                     <ListOfShares portfolio={portfolio} removeShare={removeShare} updateSharePrice={updateSharePrice} updateAmountHeld={updateAmountHeld} />
                     : <p>Loading</p>
                 }
+                {/* <AddShares filterFunction={filterFunction}/> */}
             </main>
         </>
     )
