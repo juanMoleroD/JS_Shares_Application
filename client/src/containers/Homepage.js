@@ -14,7 +14,7 @@ const HomePage = () => {
     },[])
 
     const getNews=()=>{
-        fetch("https://content.guardianapis.com/search?q=brexit&format=json&api-key=test")
+        fetch("https://content.guardianapis.com/search?q=investment&format=json&api-key=test")
         .then(res => res.json())
         .then(newsLog => processData(newsLog));
     }
@@ -25,7 +25,8 @@ const HomePage = () => {
         const newsLog = data.response.results.map( (article) => {
             return{
                 "headline" : article.webTitle,
-                "section" : article.sectionName
+                "section" : article.sectionName,
+                "url" : article.webUrl
             }
 
         })
@@ -42,7 +43,7 @@ const HomePage = () => {
 
     return(
         <>
-        <h2>Today's Headlines</h2>
+        <h2>HomePage</h2>
             <NewsList news={news} onNewsSelected={onNewsSelected}/>
         </>
 

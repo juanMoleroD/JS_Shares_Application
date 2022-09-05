@@ -39,7 +39,7 @@ function App() {
           <li><a href="" className="social-icon"> <i className="fa fa-facebook"></i></a></li>
           <li><a href="" className="social-icon"> <i className="fa fa-twitter"></i></a></li>
           <li><a href="" className="social-icon"> <i className="fa fa-rss"></i></a></li>
-          <li><a href="" className="social-icon"> <i className="fa fa-youtube"></i></a></li>
+          <li><a href="https://www.youtube.com/watch?v=-g10fBMRypA&ab_channel=CoComelon-FurryFriends" className="social-icon"> <i className="fa fa-youtube"></i></a></li>
           <li><a href="" className="social-icon"> <i className="fa fa-linkedin"></i></a></li>
           <li><a href="" className="social-icon"> <i className="fa fa-google-plus"></i></a></li>
         </ul>
