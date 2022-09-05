@@ -3,10 +3,10 @@ import Shares from "./Shares";
 import TotalValue from "./TotalValue";
 
 
-const ListOfShares = ({ portfolio, removeShare, updateSharePrice }) => {
+const ListOfShares = ({ portfolio, removeShare, updateSharePrice, updateAmountHeld }) => {
 
     const shareNodes = portfolio.map((share, index) => {
-        return <Shares share={share} key={index} removeShare={removeShare}  updateSharePrice={updateSharePrice} />
+        return <Shares share={share} key={index} removeShare={removeShare}  updateSharePrice={updateSharePrice} updateAmountHeld={updateAmountHeld} />
     })
 
     return (

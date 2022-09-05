@@ -1,12 +1,20 @@
-import React from "react";
-import { deleteShare } from "../SharesService";
+import React, { useState } from "react";
+import { deleteShare, updateShare } from "../SharesService";
 import { render } from 'react-dom'
 import Highcharts, { color } from 'highcharts/highstock'
 import HighchartsReact from 'highcharts-react-official'
 
 
 
-const Shares = ({ share, removeShare, updateSharePrice }) => {
+
+const Shares = ({ share, removeShare, updateSharePrice, updateAmountHeld }) => {
+
+    const [inputText, setInputText] = useState(
+        {
+            heldAmount: ""
+        }
+    )
+        
 
     const options = {
         title: {
@@ -40,6 +48,21 @@ const Shares = ({ share, removeShare, updateSharePrice }) => {
 
     }
 
+    const handleChange = (e) =>{
+
+        const editInput = Object.assign({}, inputText);
+        editInput[e.target.name] = e.target.value;
+        setInputText(editInput);
+    }
+
+    const handleSave = (e) =>{
+        e.preventDefault();
+        updateShare(inputText, share._id)
+        .then((data) =>{
+            updateAmountHeld(data)
+        })
+    }
+
     const totalValue = share.currentPrice * share.heldAmount
     const percentage = (((share.currentPrice - share.sharePurchasePrice)/share.sharePurchasePrice)*100).toFixed(2)
     const investedAmount = share.sharePurchasePrice * share.heldAmount
@@ -67,7 +90,7 @@ const Shares = ({ share, removeShare, updateSharePrice }) => {
                                 <b>Name: </b>
                             </th>
                             <th>
-                                <b>Amount: </b>
+                                <b>Amount: </b><input onChange={handleChange} name="heldAmount"></input>
                             </th>
                             <th>
                                 <b>Purchase Price: </b><button onClick={handleIncrease}>+</button><button onClick={handleDecrease}>-</button>
@@ -84,6 +107,7 @@ const Shares = ({ share, removeShare, updateSharePrice }) => {
                             <th>
                                 <b>P/L: </b>
                             </th>
+                            
 
                         </tr>
                         <tr className="tableInfo">
@@ -94,6 +118,7 @@ const Shares = ({ share, removeShare, updateSharePrice }) => {
                             <td>{percentage}% </td>
                             <td>{totalValue}$</td>
                             <td>{profitLoss}$</td>
+                            <td><button onClick={handleSave}>Save</button></td>
                             <td className="buttonBox"><button onClick={handleDelete} className="btn">🗑</button></td>
                         </tr>
                     </tbody>
