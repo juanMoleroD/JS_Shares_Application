@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import ListOfShares from "../components/ListOfShares";
-import {getPortfolio, getSharePrice, updateShare} from "../SharesService"
+import {getPortfolio, getSharePrice, updateShare, postShare} from "../SharesService"
 import Shares from "../components/Shares";
 
 
@@ -31,6 +31,14 @@ const Portfolio = () => {
                 
         })
     }
+    const saveNewShare = (share) => {
+        
+        postShare(share)
+        .then(result => {
+         const copyPortfolio = [...portfolio, result];
+         setPortfolio(copyPortfolio)
+        })
+     }
 
     const removeShare = (id) => {
         const temp = portfolio.map(s =>s);
@@ -53,8 +61,6 @@ const Portfolio = () => {
             getPortfolioShares()
         })
     }
-
-    
     
     return(
         <>
