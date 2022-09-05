@@ -245,3 +245,15 @@ h3{
   }
   .vmove:hover { animation-play-state: paused; }
 
+  .twitter-timeline{
+
+
+    width: 20vw !important;
+  }
+
+.home{
+
+    display:flex;
+    flex-direction: column;
+
+}

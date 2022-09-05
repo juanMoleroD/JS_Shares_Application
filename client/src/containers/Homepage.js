@@ -44,6 +44,7 @@ const HomePage = () => {
     return(
         <>
         <h2>HomePage</h2>
+    
         <section>
             Welcome to Dolla Juan's! Here you will find all the latest updates on your portfolio. 
 
@@ -53,10 +54,14 @@ const HomePage = () => {
 <p>Consequatur rerum amet fuga expedita sunt et tempora saepe? Iusto nihil explicabo perferendis quos provident delectus ducimus necessitatibus reiciendis optio tempora unde earum doloremque commodi laudantium ad nulla vel odio?</p>
        
         </section>
+        <div className="home">
+        <section className="twitter"><a className="twitter-timeline" href="https://twitter.com/CNBC?ref_src=twsrc%5Etfw" data-tweet-limit="1">Tweets by CNBC</a>  </section>
+       <section> <iframe width="420" height="345" src="https://www.youtube.com/embed/zCTM162uKIk?controls=0">
+</iframe></section>
         <section>
             <NewsList news={news} onNewsSelected={onNewsSelected}/>
             </section>
-        </>
+        </div></>
 
     )
 };
