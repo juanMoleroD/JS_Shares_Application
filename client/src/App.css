@@ -150,3 +150,41 @@ h3{
 .upgradebutton a:any-link{
     color:black 
 }
+
+.account{
+
+    text-align: center;
+    color:grey;
+    font-size: large;
+
+
+    align-items: center;
+    min-width: 300px;
+    min-height: 200px;
+    margin-top: 200px;
+ gap: 10px;
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding: 40px;
+    display: flex;
+
+
+}
+
+.details{
+    text-align: center;
+    color:grey;
+    font-size: large;
+    background-color: #ffffffcf;
+    justify-content: center;
+    min-width: 300px;
+    min-height: 200px;
+    border-radius: 20px;
+    border: white;
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    flex:33%;
+   
+}
