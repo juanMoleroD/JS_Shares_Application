@@ -14,7 +14,6 @@ const Shares = ({ share, removeShare, updateSharePrice, updateAmountHeld }) => {
             heldAmount: ""
         }
     )
-        
 
     const options = {
         title: {

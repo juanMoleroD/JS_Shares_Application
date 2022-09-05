@@ -32,7 +32,6 @@ const Portfolio = () => {
         })
     }
     const saveNewShare = (share) => {
-        
         postShare(share)
         .then(result => {
          const copyPortfolio = [...portfolio, result];
@@ -70,8 +69,6 @@ const Portfolio = () => {
                     <ListOfShares portfolio={portfolio} removeShare={removeShare} updateSharePrice={updateSharePrice} updateAmountHeld={updateAmountHeld} />
                     : <p>Loading</p>
                 }
-               
-
             </main>
         </>
     )
