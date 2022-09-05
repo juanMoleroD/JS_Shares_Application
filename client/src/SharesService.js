@@ -34,7 +34,6 @@ export const updateShare = (share, id) =>{
 };
 
 export const postShare =(share) => {
-    console.log("post method reached")
     return fetch(serverURL, {
         method: "POST",
         body: JSON.stringify(share),
