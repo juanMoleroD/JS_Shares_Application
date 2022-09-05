@@ -4,71 +4,55 @@ import {postShare, getPortfolio, getSharePrice} from "../SharesService";
 
 
 const AddShares = () => {
-    const [portfolio, setPortfolio] = useState();
+    // const [portfolio, setPortfolio] = useState();
+    const [name, setName] = useState("")
+    const [purchase, setPurchase] = useState("")
+    const [amount, setAmount] = useState("")
 
-    useEffect(() => {
-        getPortfolioShares()
-    }, [])
+    // useEffect(() => {
+    //     getPortfolioShares()
+    // }, [])
 
-    const getPortfolioShares = () =>{
-        getPortfolio()
-        .then(data => {
-            const portfolioWithSharePricesArray = data.map( (share) => {
-                return getSharePrice(share.shareName)
-            } )
+    // const getPortfolioShares = () =>{
+    //     getPortfolio()
+    //     .then(data => {
+    //         const portfolioWithSharePricesArray = data.map( (share) => {
+    //             return getSharePrice(share.shareName)
+    //         } )
 
-            Promise.all(portfolioWithSharePricesArray)
-            .then(resolvedPromises => {
+    //         Promise.all(portfolioWithSharePricesArray)
+    //         .then(resolvedPromises => {
 
-                resolvedPromises.forEach((sharePrice, index) => {
-                    data[index]["currentPrice"] = parseInt(sharePrice);
-                })
-                setPortfolio(data);
-            })
-         
-                
-        })
-    }
+    //             resolvedPromises.forEach((sharePrice, index) => {
+    //                 data[index]["currentPrice"] = parseInt(sharePrice);
+    //             })
+    //             setPortfolio(data);
+    //         })
+    //     })
+    // }
     const saveNewShare = (share) => {
-        
         postShare(share)
-        .then(result => {
-         const copyPortfolio = [...portfolio, result];
-         setPortfolio(copyPortfolio)
-        })
      }
+    
+    const handleNameInput = (event) => {
+        setName(event.target.value)
+    }
+    const handlePurchasePriceInput = (event) => {
+        setPurchase(event.target.value)
+    }
 
+    const handleAmountInput = (event) => {
+        setAmount(event.target.value)
+    }
 
-        const [name, setName] = useState("")
-        const [purchase, setPurchase] = useState("")
-        const [amount, setAmount] = useState("")
-    
-        const handleNameInput = (event) => {
-            setName(event.target.value)
-    
-        }
-        const handlePurchasePriceInput = (event) => {
-    
-            setPurchase(event.target.value)
-        }
-    
-        const handleAmountInput = (event) => {
-    
-            setAmount(event.target.value)
-        }
-
-        const onSubmit = (event) =>{
-    
-            event.preventDefault();
-            saveNewShare({
-                name: name,
-                purchase: purchase,
-                amount: amount
-            })
-        };
-        
-    
-     
+    const onSubmit = (event) =>{
+        event.preventDefault();
+        saveNewShare({
+            "shareName": name,
+            "sharePurchasePrice": purchase,
+            "heldAmount": amount
+        })
+    };
 
     return (
         <div>
@@ -81,10 +65,7 @@ const AddShares = () => {
                 <input type="text" name="heldAmount" value={amount} onChange={handleAmountInput}/>
                 <br></br>
                 <input type="submit" value="Add To Portfolio" id="save"/>
-
-
             </form>
-
         </div>
     )
 }
