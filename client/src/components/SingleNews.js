@@ -3,12 +3,11 @@ import NewsList from "./NewsList";
 
 const SingleNews = ({item}) => {
     
-return <ul>
+return <div>
 
-<h3>{item.headline}</h3>
-<li>{item.section}</li>
-<li>{item.url}</li>
-</ul>
+<h3 className="vitem"> <a href={item.url}>{item.headline} </a></h3>
+
+</div>
 
 } 
 

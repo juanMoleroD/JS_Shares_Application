@@ -8,14 +8,16 @@ const NewsList = ({news}) => {
         return <SingleNews item={newItem} key={index}/>
     })
 
-    return(
-
-        <div>
-            <ul>
+    return(<>
+        <h2>Latest Financial Headlines</h2>
+        <div className="vwrap"><div className="vmove">
+  
+        
+            <ul className="newslist">
                 {newsItems}
             </ul>
 
-        </div>
+        </div></div></>
     )
 };
 
