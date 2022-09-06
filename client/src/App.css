@@ -42,6 +42,8 @@ header{
 
     background-color: #ffffffcf;
     color: grey;
+    max-width: 50px;
+    max-height: 50px;
 }
 
 .share-display{
@@ -77,12 +79,14 @@ gap: 30px;
 }
 
 .handleshare{
-    background-color: white;
-    color: black;
+  background-color: #ffffffcf;
+    color: #0A5088;
     font-size: small;
     min-width:300px;
     min-height: 200px;
-    padding:10px
+    padding:10px;
+    border-radius:20px;
+    text-align: center;
     
 
 }
@@ -267,6 +271,50 @@ h3{
 
 }
 
+@import url(https://code.highcharts.com/css/highcharts.css);
+
+
+
+
+@import "https://code.highcharts.com/css/highcharts.css";
+
+#chartcontainer {
+    height: 400px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Link the series colors to axis colors */
+.highcharts-color-0 {
+    fill: #7cb5ec;
+    stroke: #7cb5ec;
+}
+
+.highcharts-axis.highcharts-color-0 .highcharts-axis-line {
+    stroke: #7cb5ec;
+}
+
+.highcharts-axis.highcharts-color-0 text {
+    fill: #7cb5ec;
+}
+
+.highcharts-color-1 {
+    fill: #90ed7d;
+    stroke: #90ed7d;
+}
+
+.highcharts-axis.highcharts-color-1 .highcharts-axis-line {
+    stroke: #90ed7d;
+}
+
+.highcharts-axis.highcharts-color-1 text {
+    fill: #90ed7d;
+}
+
+.highcharts-yaxis .highcharts-axis-line {
+    stroke-width: 2px;
+}
+
 
 
 .homecard{
@@ -298,7 +346,6 @@ h3{
   min-width: 40%;
   max-height: 600px;
   min-height: 600px;
-  
   background-color:  #ffffffcf;
   border-radius: 20px;
   border: white;
@@ -324,4 +371,10 @@ padding: 10px;
 
   margin:10%;
   background: none;
+}
+
+.nameofshare{
+
+  font-size: medium;
+  border: 2px solid grey;
 }

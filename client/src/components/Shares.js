@@ -9,6 +9,8 @@ import HighchartsReact from 'highcharts-react-official'
 
 const Shares = ({ share, removeShare, updateInput}) => {
 
+
+
     const [inputText, setInputText] = useState(
         {   
             shareName: share.shareName,
@@ -25,6 +27,8 @@ const Shares = ({ share, removeShare, updateInput}) => {
             data: [share.sharePurchasePrice, share.currentPrice]
         }]
     }
+
+
 
     const handleDelete = () =>{
         deleteShare(share._id).then(()=>{
@@ -63,7 +67,7 @@ const Shares = ({ share, removeShare, updateInput}) => {
 
        
 <div className="handleshare">
-    <p><b>Name:</b> {share.shareName} </p>
+    <p className="nameofshare"><b>{share.shareName}</b>  </p>
     <p><b>Amount:</b> {share.heldAmount}</p>
     <input placeholder="Edit Amount Purchased" onChange={handleChange} name="heldAmount"></input>
      <p><b>Purchase Price:</b> {share.sharePurchasePrice}</p>
@@ -72,8 +76,9 @@ const Shares = ({ share, removeShare, updateInput}) => {
     <p><b>24h/Change: </b>{percentage}% </p>
     <p><b>Total Value: </b>{totalValue}$</p>
                             <p><b>Profit/Loss: </b>{profitLoss}$</p>
-    <button onClick={handleSave}>Save</button>
-    <button onClick={handleDelete} className="btn">🗑</button>
+    <p><button className="button" onClick={handleSave}>Save </button>      
+
+    <button className="button" onClick={handleDelete}>    🗑</button> </p>
     
 </div>
 <br></br>
@@ -82,6 +87,7 @@ const Shares = ({ share, removeShare, updateInput}) => {
                     highcharts={Highcharts}
                     constructorType={'stockChart'}
                     options={options}
+
                 />
             </div>
 
