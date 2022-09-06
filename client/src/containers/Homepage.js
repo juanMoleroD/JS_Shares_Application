@@ -46,12 +46,11 @@ const HomePage = () => {
         <h2>HomePage</h2>
       <div className="home">
         <section className="homecard">
-            Welcome to Dolla Juan's! Here you will find all the latest updates on your portfolio. 
+        <h2 className="welcome">Welcome to JPA Portfolio App! Here you will find all the latest updates on your portfolio. </h2>
 
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui dicta minus molestiae vel beatae natus eveniet ratione temporibus aperiam harum alias officiis assumenda officia quibusdam deleniti eos cupiditate dolore doloribus!</p>
-<p>Ad dolore dignissimos asperiores dicta facere optio quod commodi nam tempore recusandae. Rerum sed nulla eum vero expedita ex delectus voluptates rem at neque quos facere sequi unde optio aliquam!</p>
-<p>Tenetur quod quidem in voluptatem corporis dolorum dicta sit pariatur porro quaerat autem ipsam odit quam beatae tempora quibusdam illum! Modi velit odio nam nulla unde amet odit pariatur at!</p>
-<p>Consequatur rerum amet fuga expedita sunt et tempora saepe? Iusto nihil explicabo perferendis quos provident delectus ducimus necessitatibus reiciendis optio tempora unde earum doloremque commodi laudantium ad nulla vel odio?</p>
+            <h3 className="welcome">JPA Portfolio App truly revolutionises the online portfolio tracking space.
+With JPA Portfolio, you can automatically track the true performance of all your listed stocks from the US Stock Market. You will also be able to follow the latest financial news, latest CNBC tweets and have direct access to Watch Day Trading Live from our partner YouTube Channel.</h3>
+
        
         </section>
         <div className="homecard2">
