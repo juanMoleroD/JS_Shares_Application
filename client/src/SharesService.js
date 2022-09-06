@@ -22,13 +22,13 @@ export const getPortfolio = () => {
 
 
 export const deleteShare = (id) => {
-    return fetch(serverURL + id ,{
+    return fetch(serverURL + '/' + id ,{
         method: 'DELETE'
     })
 };
 
 export const updateShare = (share, id) =>{
-    return fetch(serverURL + id, {
+    return fetch(serverURL + '/' + id, {
         method: "PUT",
         body: JSON.stringify(share),
         headers: { 'Content-Type': 'application/json'}
