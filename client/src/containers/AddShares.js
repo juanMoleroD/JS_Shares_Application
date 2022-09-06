@@ -9,6 +9,8 @@ const AddShares = ({filterFunction, symbolSearchResults}) => {
     const [purchase, setPurchase] = useState("")
     const [amount, setAmount] = useState("")
 
+
+
     const saveNewShare = (share) => {
         postShare(share)
      }
@@ -39,6 +41,8 @@ const AddShares = ({filterFunction, symbolSearchResults}) => {
 
     });
 
+
+
     const symbolSearchNodes = symbolSearchResults.map(symbolData => {
         return (
             
@@ -52,18 +56,21 @@ const AddShares = ({filterFunction, symbolSearchResults}) => {
         <h2>Add A New Share</h2>
             <form className="formtoadd"onSubmit={onSubmit}>   
                 <label> Name: </label>
-                <input type="text" name="shareName" value={name} onChange={searchInput}/>
+                <input placeholder="Please type in the share you would like"type="text" name="shareName" value={name} onChange={searchInput}/>
+                <select onChange={(e) => setName (e.target.value)}>{symbolSearchNodes}</select> 
                 <label> Purchase Price: </label>
                 <input type="text" name="sharePurchasePrice" value={purchase} onChange={handlePurchasePriceInput}/>
                 <label> Amount: </label>
                 <input type="text" name="heldAmount" value={amount} onChange={handleAmountInput}/>
+    
                 <br></br>
                 <input className="button" type="submit" value="Add To Portfolio" id="save"/>
+
             </form>
 
             <div>
-                <h3>Did you mean?</h3>
-                <select onChange={(e) => setName (e.target.value)}>{symbolSearchNodes}</select> 
+           
+             
                 
             </div>
         </div>

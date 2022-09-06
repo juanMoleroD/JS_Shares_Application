@@ -1,4 +1,4 @@
-const API_Key = "J2DXV9A72P8LXA9R";
+const API_Key = "RIXBA5JIFSEPNSRV";
 const Weekly_series = "function=TIME_SERIES_WEEKLY"
 
 const shares1 = [
@@ -10,7 +10,6 @@ const shares2 = [
 const shares3 = [
     "PYPL", "NFLX", "SONY", "ABNB", "UBER"
 ]
-
 
 const addShareData = (shareName) => {
     fetch(`https://www.alphavantage.co/query?${Weekly_series}&symbol=${shareName}&apikey=${API_Key}`)
@@ -24,18 +23,7 @@ const addShareData = (shareName) => {
             }
         )
     }); 
-    
 }
-
-// shares1.forEach(share => addShareData(share));
-// shares2.forEach(share => addShareData(share));
-// shares3.forEach(share => addShareData(share));
-
-// addShareData("IBM");
-// addShareData("GOOG");
-// addShareData("AAPL");
-// addShareData("TSLA");
-// addShareData("AMZN");
 
 sleep = milliseconds => new Promise(resolve => setTimeout(resolve, milliseconds));
 
