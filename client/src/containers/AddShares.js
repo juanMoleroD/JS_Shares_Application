@@ -71,7 +71,7 @@ const AddShares = ({filterFunction, symbolSearchResults}) => {
                 <input type="number" min="0" name="heldAmount" value={amount} onChange={handleAmountInput}/>
     
                 <br></br>
-                <input className="button" type="submit" value="Add To Portfolio" id="save"/>
+                <input className="button" type="submit" value="Add" id="save"/>
 
             </form>
 
