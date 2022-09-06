@@ -8,7 +8,6 @@ import AddShares from "./AddShares";
 const Portfolio = () => {
 
     const [portfolio, setPortfolio] = useState();
-    const [filteredPortfolio, setFilteredPortfolio] = useState();
 
     useEffect(() => {
         getPortfolioShares()
@@ -32,11 +31,11 @@ const Portfolio = () => {
             Promise.all(portfolioWithSharePricesArray)
             .then(resolvedPromises => {
 
-                resolvedPromises.forEach((sharePrice, index) => {
-                    data[index]["currentPrice"] = parseInt(sharePrice);
+                resolvedPromises.forEach((share, index) => {
+                    data[index]["currentPrice"] = parseInt(share["Weekly Time Series"]["2022-09-02"]["4. close"]);
+                    data[index]["historicPrices"] = share["Weekly Time Series"];
                 })
                 setPortfolio(data);
-                setFilteredPortfolio(data);
             })
          
                 
