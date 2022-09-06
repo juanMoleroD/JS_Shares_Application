@@ -9,11 +9,12 @@ const NavBar = () => {
     { display: flex;
         justify-content: space-evenly;
         list-style-type: none;
-        padding: 0;
+        padding: 10px;
         margin: 0;
         gap: 10px;
         text-decoration: none;
         color: black;
+
       }`
 
     const MenuOptions = styled.li`
@@ -25,7 +26,8 @@ const NavBar = () => {
     border: 2px solid lightgrey;}
     
     &:hover {
-       background-color: lightgrey ;
+       background-color: 
+       white ;
      }
    
     

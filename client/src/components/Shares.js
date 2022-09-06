@@ -9,6 +9,8 @@ import HighchartsReact from 'highcharts-react-official'
 
 const Shares = ({ share, removeShare, updateInput}) => {
 
+    console.log(share.historicPrices["2022-09-02"]["4. close"])
+
     const [inputText, setInputText] = useState(
         {   
             shareName: share.shareName,
@@ -21,10 +23,41 @@ const Shares = ({ share, removeShare, updateInput}) => {
         title: {
             text: share.shareName
         },
+        chart: {
+            type: 'line',
+            styledMode: true
+        },
+        legend: {
+            layout: 'vertical',
+            floating: true,
+            align: 'left',
+            x: 100,
+            verticalAlign: 'top',
+            y: 70
+        },
+        xAxis: {
+            categories: ['12 Weeks Ago', '11 Weeks Ago', '10 Weeks Ago', '9 Weeks Ago', '8 Weeks Ago', '7 Weeks Ago', '6 Weeks Ago', '5 Weeks Ago', '3 Weeks Ago', '2 Weeks Ago', '1 Week Ago', 'Current']
+        },
         series: [{
-            data: [share.sharePurchasePrice, share.currentPrice]
+            data: [
+                parseInt(share.historicPrices["2022-09-02"]["4. close"]), 
+                parseInt(share.historicPrices["2022-08-26"]["4. close"]), 
+                parseInt(share.historicPrices["2022-08-19"]["4. close"]), 
+                parseInt(share.historicPrices["2022-08-12"]["4. close"]), 
+                parseInt(share.historicPrices["2022-08-05"]["4. close"]), 
+                parseInt(share.historicPrices["2022-07-29"]["4. close"]), 
+                parseInt(share.historicPrices["2022-07-22"]["4. close"]), 
+                parseInt(share.historicPrices["2022-07-15"]["4. close"]), 
+                parseInt(share.historicPrices["2022-07-08"]["4. close"]), 
+                parseInt(share.historicPrices["2022-07-01"]["4. close"]), 
+                parseInt(share.historicPrices["2022-06-24"]["4. close"]), 
+                parseInt(share.historicPrices["2022-06-17"]["4. close"]), 
+                share.currentPrice
+            ]
         }]
     }
+
+
 
     const handleDelete = () =>{
         deleteShare(share._id).then(()=>{
@@ -63,7 +96,7 @@ const Shares = ({ share, removeShare, updateInput}) => {
 
        
 <div className="handleshare">
-    <p><b>Name:</b> {share.shareName} </p>
+    <p className="nameofshare"><b>{share.shareName}</b>  </p>
     <p><b>Amount:</b> {share.heldAmount}</p>
     <input placeholder="Edit Amount Purchased" onChange={handleChange} name="heldAmount"></input>
      <p><b>Purchase Price:</b> {share.sharePurchasePrice}</p>
@@ -72,8 +105,9 @@ const Shares = ({ share, removeShare, updateInput}) => {
     <p><b>24h/Change: </b>{percentage}% </p>
     <p><b>Total Value: </b>{totalValue}$</p>
                             <p><b>Profit/Loss: </b>{profitLoss}$</p>
-    <button onClick={handleSave}>Save</button>
-    <button onClick={handleDelete} className="btn">🗑</button>
+    <p><button className="button" onClick={handleSave}>Save </button>      
+
+    <button className="button" onClick={handleDelete}>    🗑</button> </p>
     
 </div>
 <br></br>
@@ -82,6 +116,7 @@ const Shares = ({ share, removeShare, updateInput}) => {
                     highcharts={Highcharts}
                     constructorType={'stockChart'}
                     options={options}
+
                 />
             </div>
 
