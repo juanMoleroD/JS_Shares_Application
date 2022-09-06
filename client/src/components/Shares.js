@@ -54,7 +54,6 @@ const Shares = ({ share, removeShare, updateInput}) => {
 
  
 
-  
 
     return (
 
@@ -63,61 +62,20 @@ const Shares = ({ share, removeShare, updateInput}) => {
         <div className="individualshare">
 
        
-
-                {/* <table className="table">
-                    <tbody className="tbody">
-                        <tr className="title">
-                            <th>
-                                <b>Name: </b>
-                            </th>
-                            <th>
-                                <b>Amount: </b><input onChange={handleChange} name="heldAmount"></input>
-                            </th>
-                            <th>
-                                <b>Purchase Price: </b><input onChange={handleChange} name="sharePurchasePrice"></input>
-                            </th>
-                            <th>
-                                <b>Current Price: </b>
-                            </th>
-                            <th>
-                                <b>24h/Change: </b>
-                            </th>
-                            <th>
-                                <b>Total Value: </b>
-                            </th>
-                            <th>
-                                <b>P/L: </b>
-                            </th>
-                            
-
-                        </tr>
-                        <tr className="tableInfo">
-                            <td>{share.shareName}</td>
-                            <td>{share.heldAmount}</td>
-                            <td>{share.sharePurchasePrice}$ </td>
-                            <td>{share.currentPrice}$</td>
-                            <td>{percentage}% </td>
-                            <td>{totalValue}$</td>
-                            <td>{profitLoss}$</td>
-                            <td><button onClick={handleSave}>Save</button></td>
-                            <td className="buttonBox"><button onClick={handleDelete} className="btn">🗑</button></td>
-                        </tr>
-                    </tbody>
-
-                </table>
- */}
-<form className="handleshare">
-    <p>Name:{share.shareName} </p>
-    <p>Amount:{share.heldAmount}<input onChange={handleChange} name="heldAmount"></input> </p>
-     <p>Purchase Price:{share.sharePurchasePrice}$<button >+</button><button>-</button> </p>
-    <p>Current Price: {share.currentPrice}$</p>
-    <p>24 Hour Change:{percentage}% </p>
-    <p>Total Value:{totalValue}$</p>
-                            <p>Profit/Loss:{profitLoss}$</p>
+<div className="handleshare">
+    <p><b>Name:</b> {share.shareName} </p>
+    <p><b>Amount:</b> {share.heldAmount}</p>
+    <input placeholder="Edit Amount Purchased" onChange={handleChange} name="heldAmount"></input>
+     <p><b>Purchase Price:</b> {share.sharePurchasePrice}</p>
+     <input placeholder="Edit Purchase Price" onChange={handleChange} name="sharePurchasePrice"></input>
+    <p><b>Current Price: </b> {share.currentPrice}$</p>
+    <p><b>24h/Change: </b>{percentage}% </p>
+    <p><b>Total Value: </b>{totalValue}$</p>
+                            <p><b>Profit/Loss: </b>{profitLoss}$</p>
     <button onClick={handleSave}>Save</button>
     <button onClick={handleDelete} className="btn">🗑</button>
     
-</form>
+</div>
 <br></br>
      <div className="shares-display">
                 <HighchartsReact
