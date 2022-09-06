@@ -7,14 +7,15 @@ import HighchartsReact from 'highcharts-react-official'
 
 
 
-const Shares = ({ share, removeShare, updateSharePrice, updateAmountHeld }) => {
+const Shares = ({ share, removeShare, updateInput}) => {
 
     const [inputText, setInputText] = useState(
-        {
-            heldAmount: ""
+        {   
+            shareName: share.shareName,
+            heldAmount: "",
+            sharePurchasePrice:""
         }
     )
-        
 
     const options = {
         title: {
@@ -30,23 +31,6 @@ const Shares = ({ share, removeShare, updateSharePrice, updateAmountHeld }) => {
             removeShare(share._id);
         })
     }
-    const handleIncrease = () =>{
-        const increasePrice =  {
-            shareName: share.shareName,
-            sharePurchasePrice: share.sharePurchasePrice + 1,
-            heldAmount: share.heldAmount
-        }
-        updateSharePrice(increasePrice, share._id )
-    }
-    const handleDecrease = () =>{
-        const decreasePrice ={
-            shareName: share.shareName,
-            sharePurchasePrice: share.sharePurchasePrice - 1,
-            heldAmount: share.heldAmount
-        }
-        updateSharePrice(decreasePrice, share._id)
-
-    }
 
     const handleChange = (e) =>{
 
@@ -59,7 +43,7 @@ const Shares = ({ share, removeShare, updateSharePrice, updateAmountHeld }) => {
         e.preventDefault();
         updateShare(inputText, share._id)
         .then((data) =>{
-            updateAmountHeld(data)
+            updateInput(data, share._id)
         })
     }
 
@@ -90,7 +74,7 @@ const Shares = ({ share, removeShare, updateSharePrice, updateAmountHeld }) => {
                                 <b>Amount: </b><input onChange={handleChange} name="heldAmount"></input>
                             </th>
                             <th>
-                                <b>Purchase Price: </b><button onClick={handleIncrease}>+</button><button onClick={handleDecrease}>-</button>
+                                <b>Purchase Price: </b><input onChange={handleChange} name="sharePurchasePrice"></input>
                             </th>
                             <th>
                                 <b>Current Price: </b>
@@ -125,7 +109,7 @@ const Shares = ({ share, removeShare, updateSharePrice, updateAmountHeld }) => {
 <form className="handleshare">
     <p>Name:{share.shareName} </p>
     <p>Amount:{share.heldAmount}<input onChange={handleChange} name="heldAmount"></input> </p>
-     <p>Purchase Price:{share.sharePurchasePrice}$<button onClick={handleIncrease}>+</button><button onClick={handleDecrease}>-</button> </p>
+     <p>Purchase Price:{share.sharePurchasePrice}$<button >+</button><button>-</button> </p>
     <p>Current Price: {share.currentPrice}$</p>
     <p>24 Hour Change:{percentage}% </p>
     <p>Total Value:{totalValue}$</p>

@@ -1,35 +1,14 @@
 import React, {useState, useEffect} from "react";
-import {postShare, getPortfolio, getSharePrice} from "../SharesService";
+import {postShare, getPortfolio, getSharePrice, getSearch} from "../SharesService";
 
 
 
-const AddShares = () => {
-    // const [portfolio, setPortfolio] = useState();
+
+const AddShares = ({filterFunction, symbolSearchResults}) => {
     const [name, setName] = useState("")
     const [purchase, setPurchase] = useState("")
     const [amount, setAmount] = useState("")
 
-    // useEffect(() => {
-    //     getPortfolioShares()
-    // }, [])
-
-    // const getPortfolioShares = () =>{
-    //     getPortfolio()
-    //     .then(data => {
-    //         const portfolioWithSharePricesArray = data.map( (share) => {
-    //             return getSharePrice(share.shareName)
-    //         } )
-
-    //         Promise.all(portfolioWithSharePricesArray)
-    //         .then(resolvedPromises => {
-
-    //             resolvedPromises.forEach((sharePrice, index) => {
-    //                 data[index]["currentPrice"] = parseInt(sharePrice);
-    //             })
-    //             setPortfolio(data);
-    //         })
-    //     })
-    // }
     const saveNewShare = (share) => {
         postShare(share)
      }
@@ -54,12 +33,26 @@ const AddShares = () => {
         })
     };
 
+    const searchInput = ((event) =>{
+        setName(event.target.value)
+        filterFunction(event.target.value)
+
+    });
+
+    const symbolSearchNodes = symbolSearchResults.map(symbolData => {
+        return (
+            
+            <option key={symbolData["1. symbol"]} value={symbolData["1. symbol"]}> {symbolData["1. symbol"]} - {symbolData["2. name"]}</option>
+        )
+    })
+
+
     return (
         <div>
         <h2>Add A New Share</h2>
             <form className="formtoadd"onSubmit={onSubmit}>   
                 <label> Name: </label>
-                <input type="text" name="shareName" value={name} onChange={handleNameInput}/>
+                <input type="text" name="shareName" value={name} onChange={searchInput}/>
                 <label> Purchase Price: </label>
                 <input type="text" name="sharePurchasePrice" value={purchase} onChange={handlePurchasePriceInput}/>
                 <label> Amount: </label>
@@ -67,6 +60,12 @@ const AddShares = () => {
                 <br></br>
                 <input className="button" type="submit" value="Add To Portfolio" id="save"/>
             </form>
+
+            <div>
+                <h3>Did you mean?</h3>
+                <select onChange={(e) => setName (e.target.value)}>{symbolSearchNodes}</select> 
+                
+            </div>
         </div>
     )
 }
