@@ -15,6 +15,14 @@ const Portfolio = () => {
     const getPortfolioShares = () =>{
         getPortfolio()
         .then(data => {
+
+            const formatedData = data.map( (share) => {
+                const formatedShare = share;
+                formatedShare.sharePurchasePrice = parseInt(share.sharePurchasePrice);
+                formatedShare.heldAmount = parseInt(share.heldAmount);
+                return formatedShare
+            })
+
             const portfolioWithSharePricesArray = data.map( (share) => {
                 return getSharePrice(share.shareName)
             } )

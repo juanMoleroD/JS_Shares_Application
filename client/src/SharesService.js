@@ -1,13 +1,27 @@
 import {API_key} from "./API_key";
+const DEV_MODE = true;
+// const dummySharesServer = "http://localhost:9000/api/dummySharesWeekly"
+
+
+let baseURL;
+if (DEV_MODE) {
+    baseURL = "http://localhost:9000/api/dummySharesWeekly"
+} else {
+    baseURL = "https://www.alphavantage.co/query?function=TIME_SERIES_WEEKLY&symbol=";
+}
 
 const serverURL = "http://localhost:9000/api/portfolio"
-const baseURL = "https://www.alphavantage.co/query?function=";
-const weeklyData = "TIME_SERIES_WEEKLY&symbol=";
 const API_authorization = "&apikey=" + API_key;
 
 
+
 export const getSharePrice = (shareName) => {
-    const query = `https://www.alphavantage.co/query?function=TIME_SERIES_WEEKLY&symbol=${shareName}${API_authorization}`
+    let query;
+    if (DEV_MODE) {
+        query = `${baseURL}/${shareName}`
+    } else {
+        query = `${baseURL}${shareName}${API_authorization}`
+    }
     return fetch(query)
             .then(response => response.json())
             .then(data => data["Weekly Time Series"]["2022-09-02"]["4. close"])
