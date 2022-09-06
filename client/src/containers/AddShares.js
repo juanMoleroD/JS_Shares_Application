@@ -49,7 +49,8 @@ const AddShares = ({filterFunction, symbolSearchResults}) => {
 
     return (
         <div>
-            <form onSubmit={onSubmit}>   
+        <h2>Add A New Share</h2>
+            <form className="formtoadd"onSubmit={onSubmit}>   
                 <label> Name: </label>
                 <input type="text" name="shareName" value={name} onChange={searchInput}/>
                 <label> Purchase Price: </label>
@@ -57,7 +58,7 @@ const AddShares = ({filterFunction, symbolSearchResults}) => {
                 <label> Amount: </label>
                 <input type="text" name="heldAmount" value={amount} onChange={handleAmountInput}/>
                 <br></br>
-                <input type="submit" value="Add To Portfolio" id="save"/>
+                <input className="button" type="submit" value="Add To Portfolio" id="save"/>
             </form>
 
             <div>

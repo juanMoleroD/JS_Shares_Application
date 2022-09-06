@@ -52,22 +52,19 @@ const Shares = ({ share, removeShare, updateInput}) => {
     const investedAmount = share.sharePurchasePrice * share.heldAmount
     const profitLoss = totalValue - investedAmount
 
+ 
+
   
 
     return (
 
 
 
-        <div className="alphaGraph">
+        <div className="individualshare">
 
-            <div className="shares-display">
-                <HighchartsReact
-                    highcharts={Highcharts}
-                    constructorType={'stockChart'}
-                    options={options}
-                />
+       
 
-                <table className="table">
+                {/* <table className="table">
                     <tbody className="tbody">
                         <tr className="title">
                             <th>
@@ -108,12 +105,30 @@ const Shares = ({ share, removeShare, updateInput}) => {
                     </tbody>
 
                 </table>
-
-
+ */}
+<form className="handleshare">
+    <p>Name:{share.shareName} </p>
+    <p>Amount:{share.heldAmount}<input onChange={handleChange} name="heldAmount"></input> </p>
+     <p>Purchase Price:{share.sharePurchasePrice}$<button >+</button><button>-</button> </p>
+    <p>Current Price: {share.currentPrice}$</p>
+    <p>24 Hour Change:{percentage}% </p>
+    <p>Total Value:{totalValue}$</p>
+                            <p>Profit/Loss:{profitLoss}$</p>
+    <button onClick={handleSave}>Save</button>
+    <button onClick={handleDelete} className="btn">🗑</button>
+    
+</form>
+<br></br>
+     <div className="shares-display">
+                <HighchartsReact
+                    highcharts={Highcharts}
+                    constructorType={'stockChart'}
+                    options={options}
+                />
             </div>
 
 
-        </div >
+        </div>
 
 
     )

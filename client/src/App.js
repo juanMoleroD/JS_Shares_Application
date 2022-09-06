@@ -6,6 +6,7 @@ import AddShares from './containers/AddShares';
 import Portfolio from './containers/Portfolio';
 import ErrorPage from './containers/ErrorPage';
 import HomePage from './containers/Homepage';
+import Account from './containers/Account'
 import HighchartsReact from 'highcharts-react-official';
 import highcharts from 'highcharts';
 import { searchSymbol } from './SharesService';
@@ -23,36 +24,9 @@ function App() {
 
 
   return (
-    <div className="container">
-      <div className="loader">
-        {/* <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span> */}
+    <div id='root'>
+      <div>
+
       </div>
       <Router>
         <header>
@@ -64,25 +38,25 @@ function App() {
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path='/personalportfolio' element={<Portfolio />} />
-        
               <Route path='/addanewshare' element={<AddShares filterFunction={filterFunction} symbolSearchResults={symbolSearchResults}/>} />
+              <Route path='/account' element={<Account/>}/>
               <Route path="/*" element={<ErrorPage />} />
             </Routes>
           </main>
       </Router>
-      <footer>
-        <div className="footer-social-icons">
-          <h4 className="_14">Follow us for the latest stock news and information:</h4>
-          <ul className="social-icons">
-            <li><a href="" className="social-icon"> <i className="fa fa-facebook"></i></a></li>
-            <li><a href="" className="social-icon"> <i className="fa fa-twitter"></i></a></li>
-            <li><a href="" className="social-icon"> <i className="fa fa-rss"></i></a></li>
-            <li><a href="" className="social-icon"> <i className="fa fa-youtube"></i></a></li>
-            <li><a href="" className="social-icon"> <i className="fa fa-linkedin"></i></a></li>
-            <li><a href="" className="social-icon"> <i className="fa fa-google-plus"></i></a></li>
-          </ul>
-        </div>
-      </footer>
+      <footer className="footer">
+      <div className="footer-social-icons">
+        <h4 className="_14">Follow us for the latest stock news and information:</h4>
+        <ul className="social-icons">
+          <li><a href="" className="social-icon"> <i className="fa fa-facebook"></i></a></li>
+          <li><a href="" className="social-icon"> <i className="fa fa-twitter"></i></a></li>
+          <li><a href="" className="social-icon"> <i className="fa fa-rss"></i></a></li>
+          <li><a href="https://www.youtube.com/watch?v=-g10fBMRypA&ab_channel=CoComelon-FurryFriends" className="social-icon"> <i className="fa fa-youtube"></i></a></li>
+          <li><a href="" className="social-icon"> <i className="fa fa-linkedin"></i></a></li>
+          <li><a href="" className="social-icon"> <i className="fa fa-google-plus"></i></a></li>
+        </ul>
+      </div>
+    </footer>
     </div>
   );
 }

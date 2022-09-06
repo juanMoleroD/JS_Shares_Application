@@ -11,7 +11,7 @@ const ListOfShares = ({ portfolio, removeShare, updateInput}) => {
 
     return (
         <>
-            <ul>
+            <ul className="listofshares">
                 {shareNodes}
             </ul>
             <div>

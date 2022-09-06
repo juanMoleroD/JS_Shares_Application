@@ -38,6 +38,7 @@ const NavBar = () => {
         <MenuOptions><Link to="/">Home</Link></MenuOptions>
         <MenuOptions><Link to="/personalportfolio">Personal Portfolio</Link></MenuOptions>
         <MenuOptions><Link to="/addanewshare">Add A New Share</Link></MenuOptions>
+        <MenuOptions><Link to="/account">Account</Link></MenuOptions>
         </Menu>
 
     )
