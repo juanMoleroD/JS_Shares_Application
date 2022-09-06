@@ -3,6 +3,7 @@ import ListOfShares from "../components/ListOfShares";
 import {getPortfolio, getSharePrice, updateShare, postShare, searchSymbol} from "../SharesService"
 import Shares from "../components/Shares";
 import AddShares from "./AddShares";
+import './Portfolio.css';
 
 
 const Portfolio = () => {
