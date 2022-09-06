@@ -2,7 +2,6 @@ import {API_key} from "./API_key";
 const DEV_MODE = true;
 // const dummySharesServer = "http://localhost:9000/api/dummySharesWeekly"
 
-
 let baseURL;
 if (DEV_MODE) {
     baseURL = "http://localhost:9000/api/dummySharesWeekly"
@@ -14,9 +13,6 @@ const serverURL = "http://localhost:9000/api/portfolio"
 const API_authorization = "&apikey=" + API_key;
 const API_Search = `https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords=`
 
-
-
-
 export const getSharePrice = (shareName) => {
     let query;
     if (DEV_MODE) {
@@ -27,13 +23,13 @@ export const getSharePrice = (shareName) => {
     return fetch(query)
             .then(response => response.json())
             .then(data => data["Weekly Time Series"]["2022-09-02"]["4. close"])
+            
 };
 
 export const getPortfolio = () => {
     return fetch(serverURL)
                 .then(response => response.json())
 };
-
 
 export const deleteShare = (id) => {
     return fetch(serverURL + '/' + id ,{
@@ -56,9 +52,6 @@ export const postShare =(share) => {
         headers: {'Content-Type' : 'application/json'}
     })
 };
-
-
-
 
 export const searchSymbol = (searchParam) => {
     return fetch(API_Search + `${searchParam}${API_authorization}`)
