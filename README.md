@@ -1,4 +1,4 @@
-## The JPA application:
+# The JPA application:
 
 With this application a user can save and retrieve data on their portfolio. The app uses a react frontend for displaying and interacting with the data, and a node backend using express. It also stores the users portfolio data in MongoDB.
 
@@ -18,7 +18,7 @@ note: if running in Develop Mode, add the API key on "server/dummyDataFetch.js"
 3. Start the back end running "npm start" in the server folder.
 4. Start the front end running "npm start" in the client folder.
 
-### Develop Mode:
+## Develop Mode:
 
 Due to the API limitations on calls per minute using the free tier, we developed a dummy backend API to simulate calls to the AlphaVantage. To run this please run the following commands before starting the application.
 
