@@ -1,5 +1,5 @@
 import {API_key} from "./API_key";
-const DEV_MODE = true;
+const DEV_MODE = false;
 // const dummySharesServer = "http://localhost:9000/api/dummySharesWeekly"
 
 let baseURL;
@@ -22,8 +22,7 @@ export const getSharePrice = (shareName) => {
     }
     return fetch(query)
             .then(response => response.json())
-            .then(data => data["Weekly Time Series"]["2022-09-02"]["4. close"])
-            
+            .then(data => data)
 };
 
 export const getPortfolio = () => {

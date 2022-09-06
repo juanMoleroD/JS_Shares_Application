@@ -24,17 +24,19 @@ const Portfolio = () => {
                 return formatedShare
             })
 
-            const portfolioWithSharePricesArray = data.map( (share) => {
+            const portfolioWithSharePricesArray = formatedData.map( (share) => {
                 return getSharePrice(share.shareName)
             } )
 
             Promise.all(portfolioWithSharePricesArray)
             .then(resolvedPromises => {
 
-                resolvedPromises.forEach((sharePrice, index) => {
-                    data[index]["currentPrice"] = parseInt(sharePrice);
+                resolvedPromises.forEach((share, index) => {
+                    formatedData[index]["currentPrice"] = parseInt(share["Weekly Time Series"]["2022-09-02"]["4. close"]); 
+                    formatedData[index]["historicPrices"] = share["Weekly Time Series"]
+                    
                 })
-                setPortfolio(data);
+                setPortfolio(formatedData);
             })
          
                 
