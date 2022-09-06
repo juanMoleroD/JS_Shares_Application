@@ -1,4 +1,5 @@
-const API_Key = "RIXBA5JIFSEPNSRV";
+const API_Key = "";
+
 const Weekly_series = "function=TIME_SERIES_WEEKLY"
 
 const shares1 = [

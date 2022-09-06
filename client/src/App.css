@@ -1,7 +1,7 @@
 
-/* a{
-  text-decoration: none;
-} */
+a{
+  color:#0A5088;
+}
 
 
 header{
@@ -42,6 +42,8 @@ header{
 
     background-color: #ffffffcf;
     color: grey;
+    max-width: 50px;
+    max-height: 50px;
 }
 
 .share-display{
@@ -77,12 +79,14 @@ gap: 30px;
 }
 
 .handleshare{
-    background-color: white;
-    color: black;
+  background-color: #ffffffcf;
+    color: #0A5088;
     font-size: small;
     min-width:300px;
     min-height: 200px;
-    padding:10px
+    padding:10px;
+    border-radius:20px;
+    text-align: center;
     
 
 }
@@ -121,7 +125,7 @@ h1{
     background-color:  #ffffffcf;
     border-radius: 20px;
     border: white;
-    color: grey;
+    color: #0A5088;
     text-align: center;
 }
 
@@ -130,7 +134,7 @@ h2{
     background-color:  #ffffffcf;
     border-radius: 20px;
     border: white;
-    color: grey;
+    color: #0A5088;
     text-align: center;
 }
 
@@ -138,7 +142,7 @@ h3{
     background-color:  #ffffffcf;
     border-radius: 20px;
     border: white;
-    color: grey;
+    color: #0A5088;
     text-align: center;
 }
 
@@ -267,6 +271,45 @@ h3{
 
 }
 
+@import url(https://code.highcharts.com/css/highcharts.css);
+
+
+
+
+@import url(https://code.highcharts.com/css/highcharts.css);
+
+.share-display{
+    height: 400px;
+    max-width: 800px;
+    margin: 0 auto;
+
+}
+
+/* Link the series colors to axis colors */
+.highcharts-color-0 {
+    fill: #0A5088;
+    stroke: #0A5088;
+}
+
+
+.highcharts-background {
+  fill:  #ffffffcf;
+  stroke: #0A5088;
+
+}
+.highcharts-axis.highcharts-color-0 .highcharts-axis-line {
+    stroke: #0A5088;
+}
+
+.highcharts-axis.highcharts-color-0 text {
+    fill: #0A5088;
+}
+
+
+.highcharts-yaxis .highcharts-axis-line {
+    stroke-width: 2px;
+}
+
 
 
 .homecard{
@@ -298,7 +341,6 @@ h3{
   min-width: 40%;
   max-height: 600px;
   min-height: 600px;
-  
   background-color:  #ffffffcf;
   border-radius: 20px;
   border: white;
@@ -324,4 +366,10 @@ padding: 10px;
 
   margin:10%;
   background: none;
+}
+
+.nameofshare{
+
+  font-size: medium;
+  border: 2px solid grey;
 }
