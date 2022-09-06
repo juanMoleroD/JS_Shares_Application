@@ -5,18 +5,6 @@ const createDummyRouter = function (collections) {
 
     const Router = express.Router();
 
-    Router.get("/", (request, response) => {
-        collections
-            .find()
-            .toArray()
-            .then(docs => response.json(docs))
-            .catch((err) => {
-                console.error(err);
-                response.status(500);
-                response.json({ status: 500, error: err });
-            });
-    })
-
     Router.get("/:name", (request, response) => {
         const nameToSearch = request.params.name;
         console.log(nameToSearch)
@@ -50,35 +38,6 @@ const createDummyRouter = function (collections) {
                 response.json({status: 500, error: error});
             });
     })
-
-    Router.delete("/:id", (request,response) => {
-        const id = request.params.id;
-        collections
-            .deleteOne({_id: ObjectId(id)})
-            .then(result => response.json(result))
-            .catch(error => {
-                console.error;
-                response.status(500);
-                response.json({status: 500, error: error});
-            });
-    })
-
-    Router.put("/:id", (request, response) => {
-        const id = request.params.id;
-        const newDataToUpdate = request.body;
-        collections
-            .updateOne(
-                { _id: ObjectId(id)} ,
-                { "$set": newDataToUpdate}
-            )
-            .then(result => result.json())
-            .catch(error => {
-                console.error;
-                response.status(500);
-                response.json({status: 500, error: error})
-            });
-    });
-
 
     return Router;
 }
