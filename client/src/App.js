@@ -1,5 +1,5 @@
 import './App.css';
-import React from 'react';
+import React, { useState } from 'react';
 import NavBar from './components/NavBar';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import AddShares from './containers/AddShares';
@@ -8,8 +8,20 @@ import ErrorPage from './containers/ErrorPage';
 import HomePage from './containers/Homepage';
 import HighchartsReact from 'highcharts-react-official';
 import highcharts from 'highcharts';
+import { searchSymbol } from './SharesService';
 
 function App() {
+
+  const [symbolSearchResults, setSymbolSearchResults] = useState([])
+  
+  const filterFunction = (input) => {
+    const searchResults = searchSymbol(input)
+    .then (data => setSymbolSearchResults(data.bestMatches))
+
+}
+
+
+
   return (
     <div className="container">
       <div className="loader">
@@ -53,7 +65,7 @@ function App() {
               <Route path="/" element={<HomePage />} />
               <Route path='/personalportfolio' element={<Portfolio />} />
         
-              <Route path='/addanewshare' element={<AddShares />} />
+              <Route path='/addanewshare' element={<AddShares filterFunction={filterFunction} symbolSearchResults={symbolSearchResults}/>} />
               <Route path="/*" element={<ErrorPage />} />
             </Routes>
           </main>
