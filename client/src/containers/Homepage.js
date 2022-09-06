@@ -54,10 +54,12 @@ const HomePage = () => {
 <p>Consequatur rerum amet fuga expedita sunt et tempora saepe? Iusto nihil explicabo perferendis quos provident delectus ducimus necessitatibus reiciendis optio tempora unde earum doloremque commodi laudantium ad nulla vel odio?</p>
        
         </section>
-        <div >
-        <section className="twitter"><a className="twitter-timeline" href="https://twitter.com/CNBC?ref_src=twsrc%5Etfw" data-tweet-limit="1">Tweets by CNBC</a>  </section>
-       <section> <iframe width="420" height="345" src="https://www.youtube.com/embed/zCTM162uKIk?controls=0">
+        <div className="homecard2">
+        <div className="mediapage">
+        <section className="twitter"><a className="twitter-timeline" href="https://twitter.com/CNBC?ref_src=twsrc%5Etfw" data-tweet-limit="2" width="150" height="525">Tweets by CNBC</a>  </section>
+       <section> <iframe width="350" height="525" src="https://www.youtube.com/embed/zCTM162uKIk?controls=0">
 </iframe></section>
+</div>
         <section>
             <NewsList news={news} onNewsSelected={onNewsSelected}/>
             </section>
