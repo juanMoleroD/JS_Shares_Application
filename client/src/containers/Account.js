@@ -19,7 +19,7 @@ const Account = ()=> {
         </section>
 
         <section className="details">
-        <h2>
+        <h2 data-testid="bankDetails">
             Bank Details
         </h2>
         <p>Bank Name: Starling</p>
