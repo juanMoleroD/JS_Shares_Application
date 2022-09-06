@@ -16,7 +16,7 @@ const TotalValue = ({portfolio}) => {
 
     return(
         <>
-<h2 className="total">Total Portfolio Value: £ {totalAmount}</h2>
+<h2 data-testid="totalValue" className="total">Total Portfolio Value: £ {totalAmount}</h2>
         </>
     )
 
