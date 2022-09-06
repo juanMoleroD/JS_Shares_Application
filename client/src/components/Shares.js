@@ -78,12 +78,7 @@ const Shares = ({ share, removeShare, updateSharePrice, updateAmountHeld }) => {
 
         <div className="individualshare">
 
-            <div className="shares-display">
-                <HighchartsReact
-                    highcharts={Highcharts}
-                    constructorType={'stockChart'}
-                    options={options}
-                />
+       
 
                 {/* <table className="table">
                     <tbody className="tbody">
@@ -139,6 +134,13 @@ const Shares = ({ share, removeShare, updateSharePrice, updateAmountHeld }) => {
     <button onClick={handleDelete} className="btn">🗑</button>
     
 </form>
+<br></br>
+     <div className="shares-display">
+                <HighchartsReact
+                    highcharts={Highcharts}
+                    constructorType={'stockChart'}
+                    options={options}
+                />
             </div>
 
 
