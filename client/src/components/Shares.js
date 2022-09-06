@@ -9,7 +9,7 @@ import HighchartsReact from 'highcharts-react-official'
 
 const Shares = ({ share, removeShare, updateInput}) => {
 
-
+    console.log(share.historicPrices["2022-09-02"]["4. close"])
 
     const [inputText, setInputText] = useState(
         {   
@@ -23,8 +23,37 @@ const Shares = ({ share, removeShare, updateInput}) => {
         title: {
             text: share.shareName
         },
+        chart: {
+            type: 'line',
+            styledMode: true
+        },
+        legend: {
+            layout: 'vertical',
+            floating: true,
+            align: 'left',
+            x: 100,
+            verticalAlign: 'top',
+            y: 70
+        },
+        xAxis: {
+            categories: ['12 Weeks Ago', '11 Weeks Ago', '10 Weeks Ago', '9 Weeks Ago', '8 Weeks Ago', '7 Weeks Ago', '6 Weeks Ago', '5 Weeks Ago', '3 Weeks Ago', '2 Weeks Ago', '1 Week Ago', 'Current']
+        },
         series: [{
-            data: [share.sharePurchasePrice, share.currentPrice]
+            data: [
+                parseInt(share.historicPrices["2022-09-02"]["4. close"]), 
+                parseInt(share.historicPrices["2022-08-26"]["4. close"]), 
+                parseInt(share.historicPrices["2022-08-19"]["4. close"]), 
+                parseInt(share.historicPrices["2022-08-12"]["4. close"]), 
+                parseInt(share.historicPrices["2022-08-05"]["4. close"]), 
+                parseInt(share.historicPrices["2022-07-29"]["4. close"]), 
+                parseInt(share.historicPrices["2022-07-22"]["4. close"]), 
+                parseInt(share.historicPrices["2022-07-15"]["4. close"]), 
+                parseInt(share.historicPrices["2022-07-08"]["4. close"]), 
+                parseInt(share.historicPrices["2022-07-01"]["4. close"]), 
+                parseInt(share.historicPrices["2022-06-24"]["4. close"]), 
+                parseInt(share.historicPrices["2022-06-17"]["4. close"]), 
+                share.currentPrice
+            ]
         }]
     }
 

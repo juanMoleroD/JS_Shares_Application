@@ -276,9 +276,9 @@ h3{
 
 
 
-@import "https://code.highcharts.com/css/highcharts.css";
+@import url(https://code.highcharts.com/css/highcharts.css);
 
-#chartcontainer {
+.share-display{
     height: 400px;
     max-width: 800px;
     margin: 0 auto;
@@ -290,6 +290,11 @@ h3{
     stroke: #7cb5ec;
 }
 
+
+.highcharts-background {
+  fill:  #ffffffcf;
+  stroke: #7cb5ec;
+}
 .highcharts-axis.highcharts-color-0 .highcharts-axis-line {
     stroke: #7cb5ec;
 }
