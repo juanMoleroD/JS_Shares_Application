@@ -254,6 +254,37 @@ h3{
 .home{
 
     display:flex;
-    flex-direction: column;
+    
+
+}
+
+#root{
+
+  min-height: 800px;
+  
+
+}
+
+
+
+.homecard{
+  justify-content: center;
+  align-items: center;
+  max-width: 500px;
+  max-height: 500px;
+  margin:auto;
+  background-color:  #ffffffcf;
+  border-radius: 20px;
+  border: white;
+  color: grey;
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding: 40px;
+  border:20px;
+  display: flex;
+  flex:33%;
+  flex-direction: column;
+
+
 
 }
