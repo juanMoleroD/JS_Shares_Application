@@ -36,7 +36,7 @@ const Portfolio = () => {
                     data[index]["currentPrice"] = parseInt(sharePrice);
                 })
                 setPortfolio(data);
-                setFilteredPortfolio(data);
+               
             })
          
                 
