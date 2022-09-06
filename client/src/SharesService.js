@@ -22,7 +22,8 @@ export const getSharePrice = (shareName) => {
     }
     return fetch(query)
             .then(response => response.json())
-            .then(data => data["Weekly Time Series"]["2022-09-02"]["4. close"])
+            .then(data => data)
+            //["Weekly Time Series"]["2022-09-02"]["4. close"]
             
 };
 
