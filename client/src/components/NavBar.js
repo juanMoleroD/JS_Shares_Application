@@ -25,7 +25,7 @@ const NavBar = () => {
     border: 2px solid lightgrey;}
     
     &:hover {
-       background-color: lightgrey ;
+       background-color: white ;
      }
    
     

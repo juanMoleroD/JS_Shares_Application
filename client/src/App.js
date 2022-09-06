@@ -32,6 +32,7 @@ function App() {
             </Routes>
           </main>
       </Router>
+
       <footer className="footer">
       <div className="footer-social-icons">
         <h4 className="_14">Follow us for the latest stock news and information:</h4>

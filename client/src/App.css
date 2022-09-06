@@ -5,7 +5,7 @@
 
 
 header{
-
+padding:10px;
     background-color: #ffffffcf;
   
 }
@@ -123,6 +123,7 @@ h1{
     border: white;
     color: grey;
     text-align: center;
+    padding: 0px;
 }
 
 h2{

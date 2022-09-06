@@ -26,7 +26,7 @@ body {
 }
 a {
     text-decoration: none;
-    color: white;
+    color: navy;
 }
 p > a:hover{
     color: black;
@@ -147,7 +147,7 @@ ul.social-icons {
 .footer{
     width: 100%;
     position: fixed;
-    bottom: 0;
+    font-size:small;
    
 }
 

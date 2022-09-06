@@ -43,7 +43,7 @@ const HomePage = () => {
 
     return(
       <>
-        <h2>HomePage</h2>
+        <h2>JPA Portfolio</h2>
       <div className="home">
         <section className="homecard">
         <h2 className="welcome">Welcome to JPA Portfolio App! Here you will find all the latest updates on your portfolio. </h2>
