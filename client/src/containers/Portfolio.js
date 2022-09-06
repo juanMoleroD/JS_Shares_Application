@@ -8,7 +8,6 @@ import AddShares from "./AddShares";
 const Portfolio = () => {
 
     const [portfolio, setPortfolio] = useState();
-    const [filteredPortfolio, setFilteredPortfolio] = useState();
 
     useEffect(() => {
         getPortfolioShares()
@@ -36,7 +35,6 @@ const Portfolio = () => {
                     data[index]["currentPrice"] = parseInt(sharePrice);
                 })
                 setPortfolio(data);
-               
             })
          
                 
