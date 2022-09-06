@@ -31,23 +31,6 @@ const Shares = ({ share, removeShare, updateInput}) => {
             removeShare(share._id);
         })
     }
-    // const handleIncrease = () =>{
-    //     const increasePrice =  {
-    //         shareName: share.shareName,
-    //         sharePurchasePrice: share.sharePurchasePrice + 1,
-    //         heldAmount: share.heldAmount
-    //     }
-    //     updateInput(increasePrice, share._id )
-    // }
-    // const handleDecrease = () =>{
-    //     const decreasePrice ={
-    //         shareName: share.shareName,
-    //         sharePurchasePrice: share.sharePurchasePrice - 1,
-    //         heldAmount: share.heldAmount
-    //     }
-    //     updateInput(decreasePrice, share._id)
-
-    // }
 
     const handleChange = (e) =>{
 

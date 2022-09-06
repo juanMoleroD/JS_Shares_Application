@@ -51,13 +51,6 @@ const Portfolio = () => {
         })
     }
 
-    // const updateAmountHeld = (share, share_id) =>{
-    //     updateShare(share, share_id)
-    //     .then(()=>{
-    //         getPortfolioShares()
-    //     })
-    // }
-
 
     
     return(
@@ -68,7 +61,7 @@ const Portfolio = () => {
                     <ListOfShares portfolio={portfolio} removeShare={removeShare} updateInput={updateInput} />
                     : <p>Loading</p>
                 }
-                {/* <AddShares filterFunction={filterFunction}/> */}
+               
             </main>
         </>
     )
