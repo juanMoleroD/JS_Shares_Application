@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { deleteShare, updateShare } from "../SharesService";
 import { render } from 'react-dom'
-import Highcharts, { color } from 'highcharts/highstock'
+import Highcharts, { color, dateFormat } from 'highcharts/highstock'
 import HighchartsReact from 'highcharts-react-official'
 
 const Shares = ({ share, removeShare, updateInput }) => {

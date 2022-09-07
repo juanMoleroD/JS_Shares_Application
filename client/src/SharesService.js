@@ -1,6 +1,6 @@
 import {API_key} from "./API_key";
-const DEV_MODE = true;
-// const dummySharesServer = "http://localhost:9000/api/dummySharesWeekly"
+const DEV_MODE = false;
+
 
 let baseURL;
 if (DEV_MODE) {
