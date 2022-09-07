@@ -5,18 +5,18 @@ import { Link } from "react-router-dom";
 
 const NavBar = () => {
 
-    const Menu = styled.ul`
+  const Menu = styled.ul`
     { display: flex;
         justify-content: space-evenly;
         list-style-type: none;
-        padding: 0;
+        padding: 10px;
         margin: 0;
         gap: 10px;
         text-decoration: none;
         color: black;
       }`
 
-    const MenuOptions = styled.li`
+  const MenuOptions = styled.li`
    {
     text-decoration: none;
     padding: 3px;
@@ -25,23 +25,19 @@ const NavBar = () => {
     border: 2px solid lightgrey;}
     
     &:hover {
-       background-color: lightgrey ;
+       background-color: 
+       white ;
      }
-   
-    
     `
 
-
-    return(
-        
-        <Menu>
-        <MenuOptions><Link to="/">Home</Link></MenuOptions>
-        <MenuOptions><Link to="/personalportfolio">Personal Portfolio</Link></MenuOptions>
-        <MenuOptions><Link to="/addanewshare">Add A New Share</Link></MenuOptions>
-        <MenuOptions><Link to="/account">Account</Link></MenuOptions>
-        </Menu>
-
-    )
+  return (
+    <Menu>
+      <MenuOptions><Link to="/">Home</Link></MenuOptions>
+      <MenuOptions><Link to="/personalportfolio">Personal Portfolio</Link></MenuOptions>
+      <MenuOptions><Link to="/addanewshare">Add A New Share</Link></MenuOptions>
+      <MenuOptions><Link to="/account">Account</Link></MenuOptions>
+    </Menu>
+  )
 }
 
 export default NavBar;

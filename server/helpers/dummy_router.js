@@ -7,7 +7,6 @@ const createDummyRouter = function (collections) {
 
     Router.get("/:name", (request, response) => {
         const nameToSearch = request.params.name;
-        console.log(nameToSearch)
         collections
             .find()
             .toArray()

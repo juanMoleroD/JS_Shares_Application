@@ -57,7 +57,6 @@ const createRouter = function (collections) {
             });
     });
 
-
     return Router;
 }
 
