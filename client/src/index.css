@@ -33,12 +33,7 @@ p > a:hover{
     color: black;
     text-decoration:  underline;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
     margin:  1% 0 1% 0;
 }
 ._12 {
@@ -144,12 +139,8 @@ ul.social-icons {
 .fa-google-plus:hover {
     background-color: #e25714;
 }
-
 .footer{
     width: 100%;
     position: fixed;
     bottom: 0;
-   
 }
-
-
