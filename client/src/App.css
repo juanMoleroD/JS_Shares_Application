@@ -1,375 +1,348 @@
-
-a{
-  color:#0A5088;
+a {
+  color: #0A5088;
 }
 
+header {
 
-header{
-
-    background-color: #ffffffcf;
-  
-}
-
-.listofshares{
- 
-    padding: 0;
-    list-style: none;
-    display: flex;
-    justify-content: space-evenly;
-}
-
-
-.formtoadd{
-    justify-content: center;
-    align-items: center;
-    max-width: 500px;
-    max-height: 500px;
-    margin:auto;
-    background-color:  #ffffffcf;
-    border-radius: 20px;
-    border: white;
-    color: grey;
-    background-position: 10px 10px;
-    background-repeat: no-repeat;
-    padding: 40px;
-    border:20px;
-    display: flex;
-    flex:33%;
-    flex-direction: column;
-}
-
-.button{
-
-    background-color: #ffffffcf;
-    color: grey;
-    max-width: 50px;
-    max-height: 50px;
-}
-
-.share-display{
-
-text-align: center;
-color:grey;
-font-size: large;
-background-color: #ffffffcf;
-justify-content: center;
-align-items: center;
-max-width: 300px;
-max-height: 200px;
-margin-top: 200px;
-margin-left: 450px;
-background-color:  #ffffffcf;
-border-radius: 20px;
-border: white;
-background-position: 10px 10px;
-background-repeat: no-repeat;
-padding: 40px;
-display: flex;
-flex:33%;
-gap: 50px;
-
-}
-.individualshare{
-gap: 30px;
-
-    min-width: 300px;
-    min-height: 300px;
- 
- 
-}
-
-.handleshare{
   background-color: #ffffffcf;
-    color: #0A5088;
-    font-size: small;
-    min-width:300px;
-    min-height: 200px;
-    padding:10px;
-    border-radius:20px;
-    text-align: center;
-    
 
 }
 
-.tbody{
-    display: flex;
-    flex-direction: column;
-    gap:10px;
-    padding:10px;
+.listofshares {
 
-
-}
-.tableInfo{
-    display: flex;
-flex-direction: column;
-
-   
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
 }
 
-.title {
-
-    display:flex;
-    flex-direction: column;
-}
-
-.total{
-
-    background-color:  #ffffffcf;
-    border-radius: 20px;
-    border: white;
-    color: grey;
-    text-align: center;
-}
-
-h1{
-    background-color:  #ffffffcf;
-    border-radius: 20px;
-    border: white;
-    color: #0A5088;
-    text-align: center;
-}
-
-h2{
-
-    background-color:  #ffffffcf;
-    border-radius: 20px;
-    border: white;
-    color: #0A5088;
-    text-align: center;
-}
-
-h3{
-    background-color:  #ffffffcf;
-    border-radius: 20px;
-    border: white;
-    color: #0A5088;
-    text-align: center;
-}
-
-.upgradebutton{
-
-    color:white
-
-}
-.upgradebutton a:any-link{
-    color:black 
-}
-
-.account{
-
-    text-align: center;
-    color:grey;
-    font-size: large;
-
-
-    align-items: center;
-    min-width: 300px;
-    min-height: 200px;
-    margin-top: 200px;
- gap: 10px;
-    background-position: 10px 10px;
-    background-repeat: no-repeat;
-    padding: 40px;
-    display: flex;
-
-
-}
-
-.details{
-    text-align: center;
-    color:grey;
-    font-size: large;
-    background-color: #ffffffcf;
-    justify-content: center;
-    min-width: 300px;
-    min-height: 200px;
-    border-radius: 20px;
-    border: white;
-    background-position: 10px 10px;
-    background-repeat: no-repeat;
-    display: flex;
-    flex-direction: column;
-    flex:33%;
-   
-}
-
-.newslist a:any-link{
-
-    background-color: #ffffffcf;
-    color: grey;}
-    /* width */
-::-webkit-scrollbar {
-    width: 10px;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: #f1f1f1;
-  }
-  
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: #888;
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: #555;
-  }
-  
-/* (A) STANDARD ROW HEIGHT */
-.vwrap, .vitem {
-    height: 30px;
-    line-height: 30px;
-  }
-   
-  /* (B) FIXED WRAPPER */
-  .vwrap {
-    overflow: hidden; /* HIDE SCROLL BAR */
-    background: #eee;
-  }
-  /* (C) TICKER ITEMS */
-  .vitem { text-align: center; }
-   
-  /* (D) ANIMATION - MOVE ITEMS FROM TOP TO BOTTOM */
-  /* CHANGE KEYFRAMES IF YOU ADD/REMOVE ITEMS */
-  .vmove { position: relative; }
-  @keyframes tickerv {
-    0% { bottom: 0; } /* FIRST ITEM */
-    30% { bottom: 30px; } /* SECOND ITEM */
-    60% { bottom: 60px; } /* THIRD ITEM */
-    90% { bottom: 90px; } /* FORTH ITEM */
-    100% { bottom: 0; } /* BACK TO FIRST */
-  }
-  .vmove {
-    animation-name: tickerv;
-    animation-duration: 10s;
-    animation-iteration-count: infinite;
-    animation-timing-function: cubic-bezier(1, 0, .5, 0);
-  }
-  .vmove:hover { animation-play-state: paused; }
-
-  .twitter-timeline{
-
-
-    width: 20vw !important;
-  }
-
-.home{
-
-    display:flex;
-    gap:10px;
-  
-    
-
-}
-
-#root{
-
-  min-height: 800px;
-  
-
-}
-
-@import url(https://code.highcharts.com/css/highcharts.css);
-
-
-
-
-@import url(https://code.highcharts.com/css/highcharts.css);
-
-.share-display{
-    height: 400px;
-    max-width: 800px;
-    margin: 0 auto;
-
-}
-
-/* Link the series colors to axis colors */
-.highcharts-color-0 {
-    fill: #0A5088;
-    stroke: #0A5088;
-}
-
-
-.highcharts-background {
-  fill:  #ffffffcf;
-  stroke: #0A5088;
-
-}
-.highcharts-axis.highcharts-color-0 .highcharts-axis-line {
-    stroke: #0A5088;
-}
-
-.highcharts-axis.highcharts-color-0 text {
-    fill: #0A5088;
-}
-
-
-.highcharts-yaxis .highcharts-axis-line {
-    stroke-width: 2px;
-}
-
-
-
-.homecard{
+.formtoadd {
   justify-content: center;
   align-items: center;
-  min-width: 40%;
-  max-height: 600px;
-  min-height: 540px;
-
-  background-color:  #ffffffcf;
+  max-width: 500px;
+  max-height: 500px;
+  margin: auto;
+  background-color: #ffffffcf;
   border-radius: 20px;
   border: white;
   color: grey;
   background-position: 10px 10px;
   background-repeat: no-repeat;
   padding: 40px;
-  border:20px;
+  border: 20px;
   display: flex;
-  flex:33%;
+  flex: 33%;
   flex-direction: column;
-
-
-
 }
 
-.homecard2{
+.button {
+
+  background-color: #ffffffcf;
+  color: grey;
+  max-width: 50px;
+  max-height: 50px;
+}
+
+.share-display {
+  text-align: center;
+  color: grey;
+  font-size: large;
+  background-color: #ffffffcf;
+  justify-content: center;
+  align-items: center;
+  max-width: 300px;
+  max-height: 200px;
+  margin-top: 200px;
+  margin-left: 450px;
+  background-color: #ffffffcf;
+  border-radius: 20px;
+  border: white;
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding: 40px;
+  display: flex;
+  flex: 33%;
+  gap: 50px;
+}
+
+.individualshare {
+  gap: 30px;
+  min-width: 300px;
+  min-height: 300px;
+}
+
+.handleshare {
+  background-color: #ffffffcf;
+  color: #0A5088;
+  font-size: small;
+  min-width: 300px;
+  min-height: 200px;
+  padding: 10px;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+}
+
+.total {
+  background-color: #ffffffcf;
+  border-radius: 20px;
+  border: white;
+  color: grey;
+  text-align: center;
+}
+
+h1 {
+  background-color: #ffffffcf;
+  border-radius: 20px;
+  border: white;
+  color: #0A5088;
+  text-align: center;
+}
+
+h2 {
+
+  background-color: #ffffffcf;
+  border-radius: 20px;
+  border: white;
+  color: #0A5088;
+  text-align: center;
+}
+
+h3 {
+  background-color: #ffffffcf;
+  border-radius: 20px;
+  border: white;
+  color: #0A5088;
+  text-align: center;
+}
+
+.upgradebutton {
+  color: white
+}
+
+.upgradebutton a:any-link {
+  color: black
+}
+
+.account {
+  text-align: center;
+  color: grey;
+  font-size: large;
+  align-items: center;
+  min-width: 300px;
+  min-height: 200px;
+  margin-top: 200px;
+  gap: 10px;
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding: 40px;
+  display: flex;
+}
+
+.details {
+  text-align: center;
+  color: grey;
+  font-size: large;
+  background-color: #ffffffcf;
+  justify-content: center;
+  min-width: 300px;
+  min-height: 200px;
+  border-radius: 20px;
+  border: white;
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  flex: 33%;
+}
+
+.newslist a:any-link {
+  background-color: #ffffffcf;
+  color: grey;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* (A) STANDARD ROW HEIGHT */
+.vwrap,
+.vitem {
+  height: 30px;
+  line-height: 30px;
+}
+
+/* (B) FIXED WRAPPER */
+.vwrap {
+  overflow: hidden;
+  /* HIDE SCROLL BAR */
+  background: #eee;
+}
+
+/* (C) TICKER ITEMS */
+.vitem {
+  text-align: center;
+}
+
+/* (D) ANIMATION - MOVE ITEMS FROM TOP TO BOTTOM */
+/* CHANGE KEYFRAMES IF YOU ADD/REMOVE ITEMS */
+.vmove {
+  position: relative;
+}
+
+@keyframes tickerv {
+  0% {
+    bottom: 0;
+  }
+
+  /* FIRST ITEM */
+  30% {
+    bottom: 30px;
+  }
+
+  /* SECOND ITEM */
+  60% {
+    bottom: 60px;
+  }
+
+  /* THIRD ITEM */
+  90% {
+    bottom: 90px;
+  }
+
+  /* FORTH ITEM */
+  100% {
+    bottom: 0;
+  }
+
+  /* BACK TO FIRST */
+}
+
+.vmove {
+  animation-name: tickerv;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(1, 0, .5, 0);
+}
+
+.vmove:hover {
+  animation-play-state: paused;
+}
+
+.twitter-timeline {
+  width: 20vw !important;
+}
+
+.home {
+  display: flex;
+  gap: 10px;
+}
+
+#root {
+  min-height: 800px;
+}
+
+@import url(https://code.highcharts.com/css/highcharts.css);
+
+.share-display {
+  height: 400px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Link the series colors to axis colors */
+.highcharts-color-0 {
+  fill: #0A5088;
+  stroke: #0A5088;
+}
+
+.highcharts-background {
+  fill: #ffffffcf;
+  stroke: #0A5088;
+}
+
+.highcharts-axis.highcharts-color-0 .highcharts-axis-line {
+  stroke: #0A5088;
+}
+
+.highcharts-axis.highcharts-color-0 text {
+  fill: #0A5088;
+}
+
+
+.highcharts-yaxis .highcharts-axis-line {
+  stroke-width: 2px;
+}
+
+.homecard {
   justify-content: center;
   align-items: center;
   min-width: 40%;
   max-height: 600px;
-  min-height: 600px;
-  background-color:  #ffffffcf;
+  min-height: 540px;
+  background-color: #ffffffcf;
   border-radius: 20px;
   border: white;
   color: grey;
   background-position: 10px 10px;
   background-repeat: no-repeat;
-padding: 10px;
-  border:20px;
+  padding: 40px;
+  border: 20px;
   display: flex;
-  flex:33%;
+  flex: 33%;
   flex-direction: column;
-
-
 }
 
-.mediapage{
-
+.homecard2 {
+  justify-content: center;
+  align-items: center;
+  min-width: 40%;
+  max-height: 600px;
+  min-height: 600px;
+  background-color: #ffffffcf;
+  border-radius: 20px;
+  border: white;
+  color: grey;
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding: 10px;
+  border: 20px;
   display: flex;
-  gap:5px
+  flex: 33%;
+  flex-direction: column;
 }
 
-.welcome{
+.mediapage {
+  display: flex;
+  gap: 5px
+}
 
-  margin:10%;
+.welcome {
+  margin: 10%;
   background: none;
 }
 
-.nameofshare{
-
+.nameofshare {
   font-size: medium;
   border: 2px solid grey;
 }

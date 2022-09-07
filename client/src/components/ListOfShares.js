@@ -2,11 +2,10 @@ import React from "react";
 import Shares from "./Shares";
 import TotalValue from "./TotalValue";
 
-
-const ListOfShares = ({ portfolio, removeShare, updateInput}) => {
+const ListOfShares = ({ portfolio, removeShare, updateInput }) => {
 
     const shareNodes = portfolio.map((share, index) => {
-        return <Shares share={share} key={index} removeShare={removeShare}  updateInput={updateInput}  />
+        return <Shares share={share} key={index} removeShare={removeShare} updateInput={updateInput} />
     })
 
     return (
@@ -15,14 +14,9 @@ const ListOfShares = ({ portfolio, removeShare, updateInput}) => {
                 {shareNodes}
             </ul>
             <div>
-                <TotalValue portfolio={portfolio}/>
-
-        </div>
-
-
+                <TotalValue portfolio={portfolio} />
+            </div>
         </>
-
-
     )
 }
 

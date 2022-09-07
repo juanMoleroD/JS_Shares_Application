@@ -7,8 +7,6 @@ import Portfolio from './containers/Portfolio';
 import ErrorPage from './containers/ErrorPage';
 import HomePage from './containers/Homepage';
 import Account from './containers/Account'
-import HighchartsReact from 'highcharts-react-official';
-import highcharts from 'highcharts';
 import { searchSymbol } from './SharesService';
 
 function App() {
@@ -21,21 +19,15 @@ function App() {
         if (data.bestMatches) {
           setSymbolSearchResults(data.bestMatches)
         }
-        else{
+        else {
           setSymbolSearchResults([])
         }
       })
-
-
-
   }
-
-
 
   return (
     <div id='root'>
       <div>
-
       </div>
       <Router>
         <header>

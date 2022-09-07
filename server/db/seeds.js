@@ -5,12 +5,12 @@ db.dropDatabase();
 db.portfolio.insertMany([
     {
         shareName: "GOOG",
-        sharePurchasePrice: "110",
+        sharePurchasePrice: "50",
         heldAmount: "2"
     },
     {
         shareName: "AAPL",
-        sharePurchasePrice: "120",
+        sharePurchasePrice: "47",
         heldAmount: "1"
     }
 ]);
