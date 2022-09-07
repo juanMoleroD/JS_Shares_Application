@@ -373,3 +373,11 @@ padding: 10px;
   font-size: medium;
   border: 2px solid grey;
 }
+
+.positiveNumber{
+  color: green;
+}
+
+.negativeNumber{
+  color: red;
+}
