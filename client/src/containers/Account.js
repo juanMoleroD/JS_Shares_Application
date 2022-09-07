@@ -11,7 +11,7 @@ const Account = () => {
                 <p>Name: Ben Robert</p>
                 <p>Email: BenRoberts@codeclan.com</p>
                 <p>Password: ****** <button> Change Password </button></p>
-                <p className="upgradebutton">Membership: Free <button className="upgradebutton"><a href="https://www.alphavantage.co/support/#"> Upgrade Membership</a></button></p>
+                <p>Membership: Free <button className="upgradebutton"><a href="https://www.alphavantage.co/support/#"> Upgrade Membership</a></button></p>
             </section>
             <section className="details">
                 <h2>

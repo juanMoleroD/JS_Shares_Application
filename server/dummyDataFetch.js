@@ -1,8 +1,4 @@
 const API_Key = "";
-<<<<<<< HEAD
-
-=======
->>>>>>> b350aaa (final pass to clean code)
 const Weekly_series = "function=TIME_SERIES_WEEKLY"
 
 const shares1 = [
