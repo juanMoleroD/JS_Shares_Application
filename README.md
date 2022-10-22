@@ -27,4 +27,5 @@ Due to the API limitations on calls per minute using the free tier, we developed
 3. In the server folder run "npm run seeds" to prime the database.
 4. Start the back end running "npm run server:dev" in the server folder. This allows for changes on the back end to automatically restart the application using nodemon.
 5. In the server folder and with the backend running, run "node dummyDataFetch.js". This will take a few minutes for the data to be filtered. ENSURE your API key is inserted on the 2 files refered previously.
-6. Start the front end running "npm start" in the client folder.
+6. Go to client/ShareServices.js and change DEVMODE to true.
+7. Start the front end running "npm start" in the client folder.

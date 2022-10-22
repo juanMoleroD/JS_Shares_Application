@@ -29,12 +29,17 @@ const Portfolio = () => {
                 Promise.all(portfolioWithSharePricesArray)
                     .then(resolvedPromises => {
                         resolvedPromises.forEach((share, index) => {
-                            formatedData[index]["currentPrice"] = parseInt(share["Weekly Time Series"]["2022-09-02"]["4. close"]);
+                            const mostReacentDate = getMostReacentDate(Object.keys(share["Weekly Time Series"]));
+                            formatedData[index]["currentPrice"] = parseInt(share["Weekly Time Series"][mostReacentDate]["4. close"]);
                             formatedData[index]["historicPrices"] = share["Weekly Time Series"]
                         })
                         setPortfolio(formatedData);
                     })
             })
+    }
+
+    const getMostReacentDate = (arrayOfDates) => {
+        return arrayOfDates.reduce((date, result) => date > result ? date: result , "")
     }
 
     const removeShare = (id) => {
