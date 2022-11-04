@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url(../public/img/staticBG.png);
 }
 
 code {
@@ -18,7 +19,8 @@ code {
 body {
     font-family: 'Lato', sans-serif;
     color: white;
-    background-image: url(https://media1.giphy.com/media/JtBZm3Getg3dqxK0zP/giphy.gif?cid=ecf05e4797yptbpr5mqm0st9gvlkd4aqeezuemsn0yf18jbb&rid=giphy.gif&ct=g);
+    /* background-image: "url(/img/sharesBG.gif)"; */
+    /* url(https://media1.giphy.com/media/JtBZm3Getg3dqxK0zP/giphy.gif?cid=ecf05e4797yptbpr5mqm0st9gvlkd4aqeezuemsn0yf18jbb&rid=giphy.gif&ct=g); */
     -webkit-font-smoothing: antialiased;
     background-size: cover;
     height: 100vh;

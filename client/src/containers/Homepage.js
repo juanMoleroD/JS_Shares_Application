@@ -50,7 +50,9 @@ const HomePage = () => {
                     <section>
                         <NewsList news={news} onNewsSelected={onNewsSelected} />
                     </section>
-                </div></div></>
+                </div>
+            </div>
+        </>
     )
 };
 
